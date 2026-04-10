@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <!-- Auth Flow -->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.n3t.mobile.presentation.authen.login.LoginFragment"
+        android:label="@string/login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_register"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_login_to_forgot_password"
+            app:destination="@id/forgotPasswordFragment" />
+        <action
+            android:id="@+id/action_login_to_map"
+            app:destination="@id/mapFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.n3t.mobile.presentation.authen.register.RegisterFragment"
+        android:label="@string/register"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_register_to_verify_otp"
+            app:destination="@id/verifyOtpFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.n3t.mobile.presentation.authen.forgot_password.ForgotPasswordFragment"
+        android:label="@string/forgot_password"
+        tools:layout="@layout/fragment_forgot_password">
+        <action
+            android:id="@+id/action_forgot_password_to_verify_otp"
+            app:destination="@id/verifyOtpFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/verifyOtpFragment"
+        android:name="com.n3t.mobile.presentation.authen.verify_otp.VerifyOtpFragment"
+        android:label="@string/otp_code"
+        tools:layout="@layout/fragment_verify_otp">
+        <argument
+            android:name="phone"
+            app:argType="string" />
+        <argument
+            android:name="flow_type"
+            app:argType="string"
+            android:defaultValue="register" />
+        <action
+            android:id="@+id/action_verify_otp_to_map"
+            app:destination="@id/mapFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <!-- Main App Flow -->
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.n3t.mobile.presentation.map.MapFragment"
+        android:label="N3T"
+        tools:layout="@layout/fragment_map">
+        <action
+            android:id="@+id/action_map_to_search"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_map_to_settings"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_map_to_move_history"
+            app:destination="@id/moveHistoryFragment" />
+        <action
+            android:id="@+id/action_map_to_saved_places"
+            app:destination="@id/savedPlaceFragment" />
+        <action
+            android:id="@+id/action_map_to_license_plate"
+            app:destination="@id/licensePlateFragment" />
+        <action
+            android:id="@+id/action_map_to_bot"
+            app:destination="@id/botFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.n3t.mobile.presentation.search.SearchFragment"
+        android:label="@string/search_place"
+        tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.n3t.mobile.presentation.settings.SettingsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settings_to_change_password"
+            app:destination="@id/changePasswordFragment" />
+        <action
+            android:id="@+id/action_settings_to_edit_profile"
+            app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_settings_to_login"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.n3t.mobile.presentation.settings.ChangePasswordFragment"
+        android:label="@string/change_password"
+        tools:layout="@layout/fragment_change_password" />
+
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.n3t.mobile.presentation.settings.EditProfileFragment"
+        android:label="@string/edit_profile"
+        tools:layout="@layout/fragment_edit_profile" />
+
+    <fragment
+        android:id="@+id/moveHistoryFragment"
+        android:name="com.n3t.mobile.presentation.move_history.MoveHistoryFragment"
+        android:label="@string/move_history"
+        tools:layout="@layout/fragment_move_history" />
+
+    <fragment
+        android:id="@+id/savedPlaceFragment"
+        android:name="com.n3t.mobile.presentation.save_place.SavedPlaceFragment"
+        android:label="@string/saved_places"
+        tools:layout="@layout/fragment_saved_place" />
+
+    <fragment
+        android:id="@+id/licensePlateFragment"
+        android:name="com.n3t.mobile.presentation.license_plate.LicensePlateFragment"
+        android:label="@string/check_fine"
+        tools:layout="@layout/fragment_license_plate" />
+
+    <fragment
+        android:id="@+id/botFragment"
+        android:name="com.n3t.mobile.presentation.bot.BotFragment"
+        android:label="@string/ai_assistant"
+        tools:layout="@layout/fragment_bot" />
+
+</navigation>
