@@ -16,7 +16,7 @@ class N3TApplication : Application() {
         Environment.setFlavor(flavor)
 
         // Init Mapbox
-        MapboxOptions.accessToken = getString(R.string.mapbox_access_token)
+        MapboxOptions.accessToken = BuildConfig.MAPBOX_ACCESS_TOKEN
 
         // Init Koin DI
         startKoin {

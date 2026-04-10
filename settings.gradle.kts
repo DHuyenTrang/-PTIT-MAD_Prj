@@ -28,7 +28,9 @@ dependencyResolutionManagement {
             }
             credentials {
                 username = "mapbox"
-                password = "REDACTED"
+                password = providers.gradleProperty("MAPBOX_DOWNLOADS_TOKEN")
+                    .orElse("")
+                    .get()
             }
         }
     }
@@ -36,4 +38,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "N3T"
 include(":app")
- 

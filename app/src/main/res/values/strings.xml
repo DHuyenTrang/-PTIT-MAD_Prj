@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">N3T</string>
 
-    <!-- Mapbox -->
-    <string name="mapbox_access_token" translatable="false">REDACTED</string>
+    <!-- Mapbox token is injected via build.gradle.kts from local.properties -->
 
     <!-- Auth -->
     <string name="login">Đăng nhập</string>
