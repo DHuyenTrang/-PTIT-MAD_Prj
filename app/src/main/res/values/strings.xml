@@ -1,3 +1,73 @@
 <resources>
     <string name="app_name">N3T</string>
+
+    <!-- Mapbox -->
+    <string name="mapbox_access_token" translatable="false">REDACTED</string>
+
+    <!-- Auth -->
+    <string name="login">Đăng nhập</string>
+    <string name="register">Đăng ký</string>
+    <string name="logout">Đăng xuất</string>
+    <string name="forgot_password">Quên mật khẩu</string>
+    <string name="change_password">Đổi mật khẩu</string>
+    <string name="phone_number">Số điện thoại</string>
+    <string name="password">Mật khẩu</string>
+    <string name="new_password">Mật khẩu mới</string>
+    <string name="confirm_password">Xác nhận mật khẩu</string>
+    <string name="display_name">Tên hiển thị</string>
+    <string name="otp_code">Mã OTP</string>
+    <string name="verify">Xác nhận</string>
+    <string name="resend_otp">Gửi lại mã OTP</string>
+    <string name="already_have_account">Đã có tài khoản?</string>
+    <string name="dont_have_account">Chưa có tài khoản?</string>
+
+    <!-- Map -->
+    <string name="search_place">Tìm kiếm địa điểm</string>
+    <string name="navigate">Dẫn đường</string>
+    <string name="my_location">Vị trí của tôi</string>
+
+    <!-- Move History -->
+    <string name="move_history">Lịch sử di chuyển</string>
+    <string name="no_history">Chưa có lịch sử</string>
+
+    <!-- Saved Places -->
+    <string name="saved_places">Địa điểm đã lưu</string>
+    <string name="home">Nhà riêng</string>
+    <string name="office">Văn phòng</string>
+    <string name="favorites">Yêu thích</string>
+    <string name="add_place">Thêm địa điểm</string>
+
+    <!-- License Plate -->
+    <string name="license_plate">Biển số xe</string>
+    <string name="check_fine">Tra cứu phạt nguội</string>
+    <string name="enter_license_plate">Nhập biển số xe</string>
+    <string name="no_fine">Không có phạt nguội</string>
+    <string name="has_fine">Có phạt nguội</string>
+
+    <!-- AI Bot -->
+    <string name="ai_assistant">Trợ lý AI</string>
+    <string name="ask_anything">Hỏi bất kỳ điều gì…</string>
+    <string name="listening">Đang nghe…</string>
+    <string name="processing">Đang xử lý…</string>
+
+    <!-- Settings -->
+    <string name="settings">Cài đặt</string>
+    <string name="edit_profile">Thay đổi thông tin</string>
+    <string name="personal_info">Thông tin cá nhân</string>
+    <string name="save">Lưu</string>
+    <string name="cancel">Hủy</string>
+
+    <!-- Errors -->
+    <string name="error_lost_internet">Mất kết nối internet</string>
+    <string name="error_server_message">Lỗi máy chủ</string>
+    <string name="error_request_timeout">Yêu cầu hết thời gian</string>
+    <string name="error_something_wrong">Đã xảy ra lỗi</string>
+    <string name="error_empty_phone">Vui lòng nhập số điện thoại</string>
+    <string name="error_empty_password">Vui lòng nhập mật khẩu</string>
+    <string name="error_password_mismatch">Mật khẩu không khớp</string>
+
+    <!-- Common -->
+    <string name="ok">OK</string>
+    <string name="loading">Đang tải…</string>
+    <string name="success">Thành công</string>
 </resources>
