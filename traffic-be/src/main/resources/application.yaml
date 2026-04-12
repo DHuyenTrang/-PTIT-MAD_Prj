@@ -1,0 +1,54 @@
+spring:
+  application:
+    name: traffic-be
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: phatletuan153@gmail.com
+    password: axjyjetrxfpxuhep
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/traffic_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: tuanphat2004
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      idle-timeout: 30000
+      connection-timeout: 20000
+      pool-name: TrafficAppHikariCP
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 2MB
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.springframework.web: INFO
+
+jwt:
+  secret: VGVzdFNlY3JldEtleTEyMzQ1Njc4OTAxMjM0NTY3ODkwMTI=
+  expiration: 86400000
