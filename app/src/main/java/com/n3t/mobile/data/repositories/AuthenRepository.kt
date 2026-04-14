@@ -8,6 +8,7 @@ import com.n3t.mobile.data.model.api_util.ErrorType
 import com.n3t.mobile.data.model.api_util.Failure
 import com.n3t.mobile.data.model.api_util.toApiResponseFail
 import com.n3t.mobile.data.model.authen.LogoutResponse
+import com.google.gson.JsonElement
 import com.n3t.mobile.data.model.authen.login.*
 import com.n3t.mobile.data.model.authen.refresh_token.RefreshTokenRequest
 import com.n3t.mobile.data.model.authen.refresh_token.RefreshTokenResponse
@@ -26,6 +27,7 @@ interface AuthenRepository {
     suspend fun forgotPassword(data: PasswordForgotRequest): Either<Failure, PasswordForgotResponse?>
     suspend fun updatePassword(data: PasswordUpdateRequest): Either<Failure, PasswordUpdateResponse?>
     suspend fun logout(): Either<Failure, LogoutResponse?>
+    suspend fun getUserProfile(): Either<Failure, JsonElement>
 }
 
 class AuthenRepositoryImpl(
@@ -47,12 +49,12 @@ class AuthenRepositoryImpl(
                         return@withContext Either.success(body)
                     }
                 }
-                val responseFail = response.toApiResponseFail()
+                val responseFail = response.toApiResponseFail()?.message
                 return@withContext Either.failure(
-                    Failure(ErrorType.SERVER_RESPONSE_ERROR, responseFail?.message, responseFail?.code)
+                    Failure(ErrorType.SERVER_RESPONSE_ERROR)
                 )
             } catch (e: Exception) {
-                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR, e.message))
+                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR))
             }
         }
 
@@ -65,7 +67,7 @@ class AuthenRepositoryImpl(
                 val response = remoteDataSource.login(data).execute()
                 return@withContext HandleApiResponse.processResponseData(response)
             } catch (e: Exception) {
-                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR, e.message))
+                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR))
             }
         }
 
@@ -82,12 +84,12 @@ class AuthenRepositoryImpl(
                         return@withContext Either.success(body)
                     }
                 }
-                val responseFail = response.toApiResponseFail()
+                val responseFail = response.toApiResponseFail()?.message
                 return@withContext Either.failure(
-                    Failure(ErrorType.SERVER_RESPONSE_ERROR, responseFail?.message, responseFail?.code)
+                    Failure(ErrorType.SERVER_RESPONSE_ERROR)
                 )
             } catch (e: Exception) {
-                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR, e.message))
+                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR))
             }
         }
 
@@ -101,12 +103,12 @@ class AuthenRepositoryImpl(
                 if (response.isSuccessful) {
                     response.body()?.let { return@withContext Either.success(it) }
                 }
-                val responseFail = response.toApiResponseFail()
+                val responseFail = response.toApiResponseFail()?.message
                 return@withContext Either.failure(
-                    Failure(ErrorType.SERVER_RESPONSE_ERROR, responseFail?.message, responseFail?.code)
+                    Failure(ErrorType.SERVER_RESPONSE_ERROR)
                 )
             } catch (e: Exception) {
-                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR, e.message))
+                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR))
             }
         }
 
@@ -118,12 +120,12 @@ class AuthenRepositoryImpl(
                 if (response.isSuccessful) {
                     response.body()?.let { return@withContext Either.success(it) }
                 }
-                val responseFail = response.toApiResponseFail()
+                val responseFail = response.toApiResponseFail()?.message
                 return@withContext Either.failure(
-                    Failure(ErrorType.SERVER_RESPONSE_ERROR, responseFail?.message, responseFail?.code)
+                    Failure(ErrorType.SERVER_RESPONSE_ERROR)
                 )
             } catch (e: Exception) {
-                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR, e.message))
+                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR))
             }
         }
 
@@ -135,12 +137,12 @@ class AuthenRepositoryImpl(
                 if (response.isSuccessful) {
                     response.body()?.let { return@withContext Either.success(it) }
                 }
-                val responseFail = response.toApiResponseFail()
+                val responseFail = response.toApiResponseFail()?.message
                 return@withContext Either.failure(
-                    Failure(ErrorType.SERVER_RESPONSE_ERROR, responseFail?.message, responseFail?.code)
+                    Failure(ErrorType.SERVER_RESPONSE_ERROR)
                 )
             } catch (e: Exception) {
-                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR, e.message))
+                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR))
             }
         }
 
@@ -152,12 +154,12 @@ class AuthenRepositoryImpl(
                 if (response.isSuccessful) {
                     response.body()?.let { return@withContext Either.success(it) }
                 }
-                val responseFail = response.toApiResponseFail()
+                val responseFail = response.toApiResponseFail()?.message
                 return@withContext Either.failure(
-                    Failure(ErrorType.SERVER_RESPONSE_ERROR, responseFail?.message, responseFail?.code)
+                    Failure(ErrorType.SERVER_RESPONSE_ERROR)
                 )
             } catch (e: Exception) {
-                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR, e.message))
+                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR))
             }
         }
 
@@ -169,12 +171,12 @@ class AuthenRepositoryImpl(
                 if (response.isSuccessful) {
                     response.body()?.let { return@withContext Either.success(it) }
                 }
-                val responseFail = response.toApiResponseFail()
+                val responseFail = response.toApiResponseFail()?.message
                 return@withContext Either.failure(
-                    Failure(ErrorType.SERVER_RESPONSE_ERROR, responseFail?.message, responseFail?.code)
+                    Failure(ErrorType.SERVER_RESPONSE_ERROR)
                 )
             } catch (e: Exception) {
-                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR, e.message))
+                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR))
             }
         }
 
@@ -186,12 +188,29 @@ class AuthenRepositoryImpl(
                 if (response.isSuccessful) {
                     response.body()?.let { return@withContext Either.success(it) }
                 }
-                val responseFail = response.toApiResponseFail()
+                val responseFail = response.toApiResponseFail()?.message
                 return@withContext Either.failure(
-                    Failure(ErrorType.SERVER_RESPONSE_ERROR, responseFail?.message, responseFail?.code)
+                    Failure(ErrorType.SERVER_RESPONSE_ERROR)
                 )
             } catch (e: Exception) {
-                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR, e.message))
+                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR))
+            }
+        }
+
+    override suspend fun getUserProfile(): Either<Failure, JsonElement> =
+        withContext(Dispatchers.IO) {
+            HandleApiResponse.whenInternetError(networkService)?.let { return@withContext it }
+            try {
+                val response = remoteDataSource.getUserProfile().execute()
+                if (response.isSuccessful) {
+                    response.body()?.let { return@withContext Either.success(it) }
+                        ?: return@withContext Either.failure(Failure(ErrorType.SERVER_RESPONSE_ERROR))
+                }
+                return@withContext Either.failure(Failure(ErrorType.SERVER_RESPONSE_ERROR))
+            } catch (e: Exception) {
+                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR))
             }
         }
 }
+
+

@@ -1,4 +1,4 @@
-package com.n3t.mobile.data.repositories
+﻿package com.n3t.mobile.data.repositories
 
 import com.n3t.mobile.core.services.NetworkService
 import com.n3t.mobile.data.api.HandleApiResponse
@@ -35,12 +35,12 @@ class LicensePlateRepositoryImpl(
                 if (response.isSuccessful) {
                     response.body()?.let { return@withContext Either.success(it) }
                 }
-                val responseFail = response.toApiResponseFail()
+                val responseFail = response.toApiResponseFail()?.message
                 return@withContext Either.failure(
-                    Failure(ErrorType.SERVER_RESPONSE_ERROR, responseFail?.message, responseFail?.code)
+                    Failure(ErrorType.SERVER_RESPONSE_ERROR)
                 )
             } catch (e: Exception) {
-                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR, e.message))
+                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR))
             }
         }
 
@@ -52,12 +52,12 @@ class LicensePlateRepositoryImpl(
                 if (response.isSuccessful) {
                     response.body()?.let { return@withContext Either.success(it) }
                 }
-                val responseFail = response.toApiResponseFail()
+                val responseFail = response.toApiResponseFail()?.message
                 return@withContext Either.failure(
-                    Failure(ErrorType.SERVER_RESPONSE_ERROR, responseFail?.message, responseFail?.code)
+                    Failure(ErrorType.SERVER_RESPONSE_ERROR)
                 )
             } catch (e: Exception) {
-                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR, e.message))
+                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR))
             }
         }
 
@@ -69,12 +69,12 @@ class LicensePlateRepositoryImpl(
                 if (response.isSuccessful) {
                     return@withContext Either.success(response.body())
                 }
-                val responseFail = response.toApiResponseFail()
+                val responseFail = response.toApiResponseFail()?.message
                 return@withContext Either.failure(
-                    Failure(ErrorType.SERVER_RESPONSE_ERROR, responseFail?.message, responseFail?.code)
+                    Failure(ErrorType.SERVER_RESPONSE_ERROR)
                 )
             } catch (e: Exception) {
-                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR, e.message))
+                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR))
             }
         }
 
@@ -86,12 +86,14 @@ class LicensePlateRepositoryImpl(
                 if (response.isSuccessful) {
                     return@withContext Either.success(response.body())
                 }
-                val responseFail = response.toApiResponseFail()
+                val responseFail = response.toApiResponseFail()?.message
                 return@withContext Either.failure(
-                    Failure(ErrorType.SERVER_RESPONSE_ERROR, responseFail?.message, responseFail?.code)
+                    Failure(ErrorType.SERVER_RESPONSE_ERROR)
                 )
             } catch (e: Exception) {
-                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR, e.message))
+                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR))
             }
         }
 }
+
+

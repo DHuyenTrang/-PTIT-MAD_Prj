@@ -25,9 +25,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:name=".N3TApplication"
-        android:theme="@style/Theme.N3T">
+        android:theme="@style/Theme.Gofa">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.splash_screen.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,6 +35,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- Dashboard -->
+        <activity android:name=".ui.dashboard.DashboardActivity" />
+        
+        <!-- Auth Activities -->
+        <activity android:name=".ui.login.LoginActivity" />
+        <activity android:name=".ui.login.DefaultLoginActivity" />
+        <activity android:name=".ui.login.LoginWithPasswordActivity" />
+        <activity android:name=".ui.register.RegisterActivity" />
+        
+        <!-- Map Activities -->
+        <activity android:name=".ui.navigation.NavigationActivity" />
+        <activity android:name=".ui.routing.RoutingActivity" />
+        <activity android:name=".ui.search.SearchActivity" />
     </application>
 
 </manifest>

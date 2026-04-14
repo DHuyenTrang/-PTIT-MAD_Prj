@@ -23,18 +23,18 @@ class Environment {
         get() = _type
 
     private val staging = Env(
-        baseUrlApi = "https://api-stg.gofa.vn/",
-        baseUrlTracking = "https://api-stg.gofa.vn/",
-        baseUrlWebsocket = "wss://api-stg.gofa.vn/",
-        baseUrlSearchMedia = "https://search-media.gofa.vn/",
+        baseUrlApi = "http://localhost/",
+        baseUrlTracking = "http://localhost/",
+        baseUrlWebsocket = "http://localhost/",
+        baseUrlSearchMedia = "http://localhost/",
         flavor = Flavor.STAGING,
     )
 
     private val production = Env(
-        baseUrlApi = "https://api.production.gofa.vn/",
-        baseUrlTracking = "https://api.production.gofa.vn/",
-        baseUrlWebsocket = "wss://api.cloud.gofa.vn/",
-        baseUrlSearchMedia = "https://search-media.gofa.vn/",
+        baseUrlApi = "http://localhost/",
+        baseUrlTracking = "http://localhost/",
+        baseUrlWebsocket = "http://localhost/",
+        baseUrlSearchMedia = "http://localhost/",
         flavor = Flavor.PRODUCTION,
     )
 

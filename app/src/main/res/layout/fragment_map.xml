@@ -1,95 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ctrContainer"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ui.map.MapFragment">
 
-    <!-- Mapbox MapView placeholder -->
-    <FrameLayout
-        android:id="@+id/mapContainer"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent"
+    <com.n3t.mobile.utils.MapUltis.GofaMapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cameraTargetLat="20.9764997"
+        app:cameraTargetLng="105.789308"
+        app:cameraZoom="8"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:background="#E8E8E8">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="🗺️ Map View"
-            android:textSize="24sp" />
-    </FrameLayout>
-
-    <!-- Search FAB -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabSearch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:src="@android:drawable/ic_menu_search"
-        android:contentDescription="@string/search_place"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="48dp" />
+        app:mapProviderType="mapbox" />
 
-    <!-- Settings FAB -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabSettings"
+
+
+    <!--    <com.n3t.mobile.core.widgets.CircleIconButton-->
+    <!--        android:id="@+id/btnVolume"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_margin="@dimen/activity_padding_horizontal"-->
+    <!--        app:icon="@drawable/ic_volume"-->
+    <!--        app:isActive="false"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/btnRadioVoV"-->
+    <!--        app:layout_constraintRight_toRightOf="parent" />-->
+
+    <com.n3t.mobile.core.widgets.CircleIconButton
+        android:id="@+id/btnMyLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:src="@android:drawable/ic_menu_preferences"
-        android:contentDescription="@string/settings"
-        app:layout_constraintTop_toBottomOf="@id/fabSearch"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_marginLeft="@dimen/activity_padding_horizontal"
+        app:icon="@drawable/ic_location"
+        app:isActive="false"
+        app:layout_constraintBottom_toBottomOf="@+id/btnFeedback"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
-    <!-- History FAB -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabHistory"
+    <com.n3t.mobile.core.widgets.CircleIconButton
+        android:id="@+id/btnRadioVoV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:src="@android:drawable/ic_menu_recent_history"
-        android:contentDescription="@string/move_history"
-        app:layout_constraintTop_toBottomOf="@id/fabSettings"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_margin="@dimen/activity_padding_horizontal"
+        app:icon="@drawable/ic_radio"
+        app:isActive="false"
+        app:layout_constraintBottom_toTopOf="@+id/btnFeedback"
+        app:layout_constraintRight_toRightOf="parent" />
 
-    <!-- Saved Places FAB -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabSavedPlaces"
+    <com.n3t.mobile.core.widgets.CircleIconButton
+        android:id="@+id/btnFeedback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:src="@android:drawable/ic_input_add"
-        android:contentDescription="@string/saved_places"
-        app:layout_constraintTop_toBottomOf="@id/fabHistory"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <!-- License Plate FAB -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabLicensePlate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:src="@android:drawable/ic_menu_info_details"
-        android:contentDescription="@string/check_fine"
-        app:layout_constraintBottom_toTopOf="@id/fabBot"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <!-- Bot FAB -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabBot"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:src="@android:drawable/ic_btn_speak_now"
-        android:contentDescription="@string/ai_assistant"
+        android:layout_marginRight="@dimen/activity_padding_horizontal"
+        android:layout_marginBottom="@dimen/bottom_sheet_margin"
+        app:icon="@drawable/ic_feedback"
+        app:isActive="true"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentFeedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/card_margin"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/btnRadioVoV"
+        app:layout_constraintRight_toLeftOf="@+id/btnRadioVoV"
+        tools:background="@color/surfaceContainer"
+        tools:layout_height="@dimen/height_fragment_container_view_160dp"
+        tools:layout_width="@dimen/width_fragment_container_view_120dp"
+        tools:visibility="visible" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/layout_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_height="@dimen/peek_height_bottom_sheet_dashboard">
+
+        <include
+            android:id="@+id/bottom_sheet_dashboard"
+            layout="@layout/bottom_sheet_dashboard"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+    <ImageButton
+        android:id="@+id/btnVolume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="@dimen/activity_padding_horizontal"
+        android:background="@drawable/bg_btn_volume"
+        android:padding="12dp"
+        android:src="@drawable/ic_volume"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="32dp" />
+        app:layout_constraintTop_toBottomOf="@id/btnMapType" />
+
+    <ImageButton
+        android:id="@+id/btnMapType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/activity_padding_horizontal"
+        android:background="@drawable/bg_btn_layer"
+
+        android:padding="12dp"
+        android:src="@drawable/ic_layer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,9 +19,22 @@ object StatusCode {
 	/// [500] Internal server error
 	const val INTERNAL_SERVER_ERROR = 500
 
+	/// [501] Not implemented
+	const val NOT_IMPLEMENTED = 501
+
+	/// [502] Bad gateway
+	const val BAD_GATEWAY = 502
+
 	/// [503] Service unavailable
 	const val SERVICE_UNAVAILABLE = 503
+
+	/// [504] Gateway timeout
+	const val GATEWAY_TIMEOUT = 504
+
+	/// [505] HTTP version not supported
+	const val HTTP_VERSION_NOT_SUPPORTED = 505
 
 	/// [999] Unknown
 	const val UNKNOWN = 999
 }
+

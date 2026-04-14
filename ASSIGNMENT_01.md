@@ -27,7 +27,6 @@ Hệ thống là một ứng dụng bản đồ dẫn đường thông minh trê
     -   Ngôn ngữ: **Kotlin**.
     -   Kiến trúc: **MVVM** (Model-View-ViewModel) + **Clean Architecture**.
     -   Frameworks/Libs: Jetpack Components (Navigation, CameraX, Room, LiveData/Flow), Retrofit (Networking), Hilt/Koin (DI).
-    -   **Android Auto:** Tích hợp để hiển thị và điều khiển trên màn hình ô tô.
 -   **Backend:**
     -   Spring Boot (Java) hoặc Node.js (tùy thế mạnh thành viên BE).
     -   RESTful API.
@@ -39,7 +38,6 @@ Hệ thống là một ứng dụng bản đồ dẫn đường thông minh trê
 ### 1.5. API bên ngoài
 -   **Map Service:** Mapbox SDK / Google Maps SDK (Maps, Navigation, Search).
 -   **Voice/AI:** Google Speech-to-Text, Text-to-Speech API.
--   **Weather:** OpenWeatherMap API (nếu hiển thị thời tiết trên lộ trình).
 
 ---
 
