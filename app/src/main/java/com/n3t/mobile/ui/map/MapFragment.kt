@@ -66,6 +66,7 @@ import com.n3t.mobile.utils.location.LocationPermissionHelper
 import com.n3t.mobile.utils.location.MyLocationManager
 import com.n3t.mobile.utils.Constants
 import com.n3t.mobile.core.mapbox.navigation.NavigationLocationProvider
+import com.n3t.mobile.ui.setting.SettingActivity
 import com.n3t.mobile.view_model.map.MapViewModel
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
@@ -471,11 +472,6 @@ class MapFragment : Fragment() {
             override fun onStateChanged(bottomSheet: View, newState: Int) {}
             override fun onSlide(bottomSheet: View, slideOffset: Float) {}
         })
-
-        binding.bottomSheetDashboard.searchBar.setOnClickListener {
-            val intent = Intent(requireContext(), SearchActivity::class.java)
-            startActivity(intent)
-        }
     }
 
     private fun setupUI() {
@@ -501,7 +497,8 @@ class MapFragment : Fragment() {
 
         // Settings button
         binding.bottomSheetDashboard.btnSetting.setOnClickListener {
-            // TODO: Launch SettingActivity when implemented
+            val intent = Intent(requireContext(), SettingActivity::class.java)
+            startActivity(intent)
         }
 
         // Map type button → show ChooseMapTypeFragment

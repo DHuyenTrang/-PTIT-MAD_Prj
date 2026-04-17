@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true"
+    tools:context=".ui.setting.SettingFragment">
+
+    <com.n3t.mobile.core.widgets.SafeAreaView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Toolbar -->
+            <RelativeLayout
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:paddingHorizontal="@dimen/activity_padding_horizontal">
+
+                <ImageButton
+                    android:id="@+id/btnBack"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentStart="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/cancel"
+                    android:padding="8dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_back" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/account"
+                    android:textAppearance="@style/Gofa.TextLg.Bold" />
+            </RelativeLayout>
+
+            <!-- Profile Avatar Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp">
+
+                <FrameLayout
+                    android:id="@+id/avatarContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivAvatar"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_camera"
+                        android:background="@color/surfaceContainer"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerCircle" />
+
+                    <FrameLayout
+                        android:id="@+id/btnChangePhoto"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_gravity="bottom|end"
+                        android:layout_marginEnd="2dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edit_photo_circle"
+                        android:elevation="4dp">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_edit_photo"
+                            android:contentDescription="@string/edit_profile" />
+                    </FrameLayout>
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tvDisplayName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:textAppearance="@style/Gofa.TextLg.Bold"
+                    android:textColor="@color/onSurface"
+                    tools:text="Tài Nguyễn" />
+            </LinearLayout>
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="@dimen/activity_padding_horizontal"
+                android:layout_marginTop="8dp"
+                android:background="@color/outlineVariant" />
+
+            <!-- Phone Number Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/activity_padding_horizontal"
+                android:paddingTop="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:textAppearance="@style/Gofa.TextSm"
+                    android:textColor="@color/onSurfaceVariant" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputEmail"
+                    style="@style/Gofa.TextField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLoginDescription">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeActionLabel="next"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:textAppearance="@style/Gofa.TextBase"
+                        android:textColor="@color/onSurfaceVariant" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!-- Full Name Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/activity_padding_horizontal"
+                android:paddingTop="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Họ và tên"
+                    android:textAppearance="@style/Gofa.TextSm"
+                    android:textColor="@color/onSurfaceVariant" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputName"
+                    style="@style/Gofa.TextField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Họ và tên"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLoginDescription">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeActionLabel="next"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:textAppearance="@style/Gofa.TextBase"
+                        android:textColor="@color/onSurfaceVariant" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!-- Change Password Row -->
+            <LinearLayout
+                android:id="@+id/rowChangePassword"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:background="@drawable/bg_card"
+                android:layout_marginHorizontal="@dimen/activity_padding_horizontal"
+                android:layout_marginTop="@dimen/activity_padding_horizontal"
+                android:paddingHorizontal="@dimen/activity_padding_horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_lock"
+                    android:contentDescription="@string/change_password" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:text="@string/change_password"
+                    android:textAppearance="@style/Gofa.TextBase.Bold"
+                    android:textColor="@color/primary" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_chevron_right"
+                    android:contentDescription="@string/change_password" />
+            </LinearLayout>
+
+            <!-- Logout Row -->
+            <LinearLayout
+                android:id="@+id/rowLogout"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@drawable/bg_card"
+                android:layout_marginHorizontal="@dimen/activity_padding_horizontal"
+                android:layout_marginTop="@dimen/activity_padding_horizontal"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/activity_padding_horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_logout"
+                    android:contentDescription="@string/logout" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:text="@string/logout"
+                    android:textAppearance="@style/Gofa.TextBase.Bold"
+                    android:textColor="@color/error" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_chevron_right"
+                    android:contentDescription="@string/logout" />
+            </LinearLayout>
+
+            <!-- Loading Overlay -->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:indeterminateTint="@color/primary"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+        </LinearLayout>
+
+    </com.n3t.mobile.core.widgets.SafeAreaView>
+</androidx.core.widget.NestedScrollView>

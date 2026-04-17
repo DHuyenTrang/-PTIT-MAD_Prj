@@ -9,6 +9,7 @@ import com.n3t.mobile.view_model.navigation.NavigationViewModel
 import com.n3t.mobile.view_model.search.DetailPlaceViewModel
 import com.n3t.mobile.view_model.search.RoutingViewModel
 import com.n3t.mobile.view_model.search.SearchViewModel
+import com.n3t.mobile.view_model.setting.SettingViewModel
 import com.n3t.mobile.ui.splash_screen.SplashViewModel
 import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
@@ -24,5 +25,6 @@ val viewModelModule = module {
     viewModel { DetailPlaceViewModel(get()) }
     viewModel { RoutingViewModel(get()) }
     viewModel { NavigationViewModel() }
+    viewModel { SettingViewModel(get()) }
 }
 

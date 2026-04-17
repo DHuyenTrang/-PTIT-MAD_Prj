@@ -1,4 +1,4 @@
-﻿<resources>
+<resources>
     <string name="app_name">N3T</string>
 
     <!-- Mapbox token is injected via build.gradle.kts from local.properties -->
@@ -55,6 +55,9 @@
     <string name="personal_info">Thông tin cá nhân</string>
     <string name="save">Lưu</string>
     <string name="cancel">Hủy</string>
+    <string name="full_name">Họ và tên</string>
+    <string name="delete_account">Xoá tài khoản</string>
+    <string name="feature_developing">Tính năng đang phát triển</string>
 
     <!-- Errors -->
     <string name="error_lost_internet">Mất kết nối internet</string>

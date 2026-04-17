@@ -47,6 +47,10 @@
         <activity android:name=".ui.navigation.NavigationActivity" />
         <activity android:name=".ui.routing.RoutingActivity" />
         <activity android:name=".ui.search.SearchActivity" />
+        
+        <!-- Setting Activities -->
+        <activity android:name=".ui.setting.SettingActivity" />
+        <activity android:name=".ui.setting.ChangePasswordActivity" />
     </application>
 
 </manifest>
