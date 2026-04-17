@@ -82,4 +82,16 @@
     <color name="color_scrim">#FF000000</color>
     <color name="color_shadow_15">#26000000</color>
     <color name="color_shadow_30">#4D000000</color>
+
+    <!-- Standard Tokens matched to Light Mode -->
+    <color name="primary">@color/color_brand_primary</color>
+    <color name="onPrimary">@color/color_text_inverse</color>
+    <color name="surface">@color/color_surface</color>
+    <color name="onSurface">@color/color_text_primary</color>
+    <color name="onSurfaceVariant">@color/color_text_secondary</color>
+    <color name="surfaceContainer">@color/color_surface_container</color>
+    <color name="background">@color/color_background</color>
+    <color name="outline">@color/color_border_primary</color>
+    <color name="outlineVariant">@color/color_border_secondary</color>
+
 </resources>

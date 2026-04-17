@@ -235,4 +235,34 @@
         <item name="android:backgroundDimEnabled">false</item>
     </style>
 
+    <!-- Custom Dialog Style -->
+    <style name="Gofa_Dialog_Transparent" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="Gofa.Button.Primary" parent="Gofa.Button">
+        <item name="backgroundTint">@color/primary</item>
+        <item name="android:textColor">@color/onPrimary</item>
+    </style>
+
+    <style name="Gofa.Button.Secondary" parent="Gofa.Button">
+        <item name="backgroundTint">@color/surfaceContainer</item>
+        <item name="android:textColor">@color/onSurface</item>
+    </style>
+
+    <style name="Gofa.Button.Tertiary" parent="Gofa.Button">
+        <item name="backgroundTint">@color/success</item>
+        <item name="android:textColor">@color/onSuccess</item>
+        <item name="android:textAppearance">@style/Gofa.TextSm.Bold</item>
+    </style>
+
+    <style name="Gofa.Button.Text" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textAppearance">@style/Gofa.TextBase.Bold</item>
+    </style>
+
 </resources>

@@ -58,6 +58,21 @@
     <string name="full_name">Họ và tên</string>
     <string name="delete_account">Xoá tài khoản</string>
     <string name="feature_developing">Tính năng đang phát triển</string>
+    <string name="msg_no_home">Chưa lưu địa chỉ Nhà</string>
+    <string name="msg_no_office">Chưa lưu địa chỉ Văn phòng</string>
+    <string name="msg_wait_gps">Đang lấy vị trí của bạn, vui lòng thử lại sau</string>
+    <string name="choose_category">Chọn mục lưu trữ</string>
+    <string name="confirm_save">Xác nhận lưu địa điểm</string>
+    <string name="msg_confirm_save_place">Bạn có muốn lưu địa điểm này vào \"%1$s\" không?</string>
+    <string name="save_success">Lưu địa điểm thành công</string>
+    <string name="delete_success">Xoá địa điểm thành công</string>
+    <string name="no_saved_places">Chưa có địa điểm đã lưu</string>
+    <string name="add_new_place">Thêm địa điểm</string>
+    <string name="co_quan">Cơ quan</string>
+    <string name="edit_location">Sửa vị trí</string>
+    <string name="delete_location">Xoá vị trí</string>
+    <string name="done_text">Xong</string>
+    <string name="msg_set_up_location">Cài đặt vị trí</string>
 
     <!-- Errors -->
     <string name="error_lost_internet">Mất kết nối internet</string>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_voice_wave"
+    android:minHeight="@dimen/voice_assistant_overlay_height"
+    android:paddingStart="@dimen/activity_padding_horizontal"
+    tools:targetApi="n">
+
+    <LinearLayout
+        android:id="@+id/llStopGoGpt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/bg_cancel_go_gpt">
+
+            <ImageView
+                android:id="@+id/ivStopGoGpt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:src="@drawable/ic_cancel"
+                app:tint="@color/primary50" />
+        </LinearLayout>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tvStateGoGpt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="93dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:maxLines="1"
+        android:ellipsize="start"
+        android:text="@string/listening"
+        android:textAlignment="center"
+        android:textColor="@color/font_colour_placeholder"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="@dimen/activity_padding_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvStateGoGpt"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/voice_wave" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
@@ -68,7 +69,13 @@ import com.n3t.mobile.utils.Constants
 import com.n3t.mobile.core.mapbox.navigation.NavigationLocationProvider
 import com.n3t.mobile.ui.setting.SettingActivity
 import com.n3t.mobile.view_model.map.MapViewModel
+import com.n3t.mobile.data.datasources.local.AppStore
+import com.n3t.mobile.data.model.place_flow.CoordinateModel
+import com.n3t.mobile.ui.routing.RoutingActivity
+import com.n3t.mobile.ui.save_place.SavePlaceActivity
+import com.n3t.mobile.data.model.place_flow.PlaceDetailUiModel
 import kotlinx.coroutines.launch
+import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 /**
@@ -81,6 +88,7 @@ class MapFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val mapViewModel: MapViewModel by activityViewModel()
+    private val appStore: AppStore by inject()
 
     // Map references
     private lateinit var mapView: MapView
@@ -523,6 +531,50 @@ class MapFragment : Fragment() {
         binding.bottomSheetDashboard.widgetSessionPlaceType.binding.btnCharge.setOnClickListener {
             toggleStation(StationProvider.CHARGE)
         }
+
+        // --- Saved Locations ---
+        binding.bottomSheetDashboard.widgetSessionPlaceType.binding.apply {
+            btnHouse.setOnClickListener {
+                val home = appStore.getHomePlaceDetail()
+                if (home == null) {
+                    Toast.makeText(requireContext(), R.string.msg_no_home, Toast.LENGTH_SHORT).show()
+                } else {
+                    navigateToRouting(home)
+                }
+            }
+
+            btnOffice.setOnClickListener {
+                val office = appStore.getOfficePlaceDetail()
+                if (office == null) {
+                    Toast.makeText(requireContext(), R.string.msg_no_office, Toast.LENGTH_SHORT).show()
+                } else {
+                    navigateToRouting(office)
+                }
+            }
+
+            btnSaved.setOnClickListener {
+                val intent = Intent(requireContext(), SavePlaceActivity::class.java)
+                startActivity(intent)
+            }
+        }
+    }
+
+    private fun navigateToRouting(destination: PlaceDetailUiModel) {
+        val currentLocation = mapViewModel.currentLocation.value
+        if (currentLocation == null) {
+            Toast.makeText(requireContext(), R.string.msg_wait_gps, Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        startActivity(
+            RoutingActivity.newIntent(
+                context = requireContext(),
+                origin = CoordinateModel(currentLocation.longitude, currentLocation.latitude),
+                destination = destination.coordinate,
+                destinationName = destination.name,
+                destinationAddress = destination.formattedAddress
+            )
+        )
     }
 
     // endregion

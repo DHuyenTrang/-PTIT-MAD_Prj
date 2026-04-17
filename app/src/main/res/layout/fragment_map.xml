@@ -49,6 +49,15 @@
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
+        <ImageView
+            android:id="@+id/btnBot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_padding_horizontal"
+            android:src="@drawable/ic_go_gpt"
+           app:layout_constraintTop_toTopOf="@id/btnMyLocation"
+            app:layout_constraintRight_toRightOf="parent" />
+
         <ImageButton
             android:id="@+id/btnVolume"
             android:layout_width="wrap_content"

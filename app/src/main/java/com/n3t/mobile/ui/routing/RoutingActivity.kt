@@ -233,15 +233,6 @@ class RoutingActivity : AppCompatActivity() {
         textView?.setTextColor(ContextCompat.getColor(this, color))
     }
 
-    private fun openGoogleMaps() {
-        val from = origin ?: return
-        val to = destination ?: return
-        val uri = Uri.parse(
-            "https://www.google.com/maps/dir/?api=1&origin=${from.latitude},${from.longitude}&destination=${to.latitude},${to.longitude}&travelmode=driving"
-        )
-        startActivity(Intent(Intent.ACTION_VIEW, uri))
-    }
-
     @Suppress("DEPRECATION")
     private inline fun <reified T : Serializable> Intent.readSerializableExtra(key: String): T? {
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {

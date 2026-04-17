@@ -88,7 +88,6 @@
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                    <!--TODO: Replace with exact Warning Drawable later if needed -->
                     <ImageView
                         android:layout_width="32dp"
                         android:layout_height="32dp"
@@ -105,7 +104,7 @@
 
                     <Button
                         android:id="@+id/btnAddPlate"
-                        style="@style/Gofa.TextButton.Primary"
+                        style="@style/Gofa.Button"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="8dp"
@@ -139,15 +138,10 @@
                     android:text="LỊCH SỬ DI CHUYỂN"
                     android:textAppearance="@style/Gofa.TextXs.Bold"
                     android:textColor="@color/onSurfaceVariant" />
-
-                <!-- Dùng text ">" tạm làm icon chevron right nếu chưa có drawable, 
-                     anh có thể thay bằng @drawable/ic_chevron_right -->
-                <TextView
+                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=">"
-                    android:textAppearance="@style/Gofa.TextLg.Bold"
-                    android:textColor="@color/primary" />
+                    android:src="@drawable/ic_chevron_right" />
             </LinearLayout>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
