@@ -1,23 +1,24 @@
 spring:
   application:
     name: traffic-be
+
   mail:
     host: smtp.gmail.com
     port: 587
-    username: phatletuan153@gmail.com
-    password: axjyjetrxfpxuhep
+    username: ${MAIL_USERNAME:phatletuan153@gmail.com}
+    password: ${MAIL_PASSWORD:axjyjetrxfpxuhep}
     properties:
       mail:
         smtp:
           auth: true
           starttls:
             enable: true
-  datasource:
-    url: jdbc:mysql://localhost:3306/traffic_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
-    username: root
-    password: tuanphat2004
-    driver-class-name: com.mysql.cj.jdbc.Driver
 
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:traffic_db}?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:tuanphat2004}
+    driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
       maximum-pool-size: 10
       minimum-idle: 5
@@ -28,11 +29,18 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: true
+    show-sql: false
     properties:
       hibernate:
-        format_sql: true
+        format_sql: false
         dialect: org.hibernate.dialect.MySQLDialect
+
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      repositories:
+        enabled: false
 
   servlet:
     multipart:
@@ -46,9 +54,9 @@ springdoc:
 
 logging:
   level:
-    org.hibernate.SQL: DEBUG
-    org.springframework.web: INFO
+    root: INFO
+    com.traffic: DEBUG
 
 jwt:
-  secret: VGVzdFNlY3JldEtleTEyMzQ1Njc4OTAxMjM0NTY3ODkwMTI=
-  expiration: 86400000
+  secret: ${JWT_SECRET:VGVzdFNlY3JldEtleTEyMzQ1Njc4OTAxMjM0NTY3ODkwMTI=}
+  expiration: ${JWT_EXPIRATION:86400000}

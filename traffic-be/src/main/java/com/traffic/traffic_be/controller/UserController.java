@@ -13,34 +13,62 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1/users")
 @RequiredArgsConstructor
 @Tag(name = "User", description = "Quản lý thông tin người dùng")
 public class UserController {
+
     private final UserService userService;
 
-    @GetMapping("/profile")
-    @Operation(summary = "Lấy thông tin cá nhân")
-    public ResponseEntity<ApiResponse<UserResponse>> getProfile() {
+    // ====== Legacy endpoints (api/v1) ======
+    @GetMapping("/api/v1/users/profile")
+    @Operation(summary = "Lấy thông tin cá nhân (v1)")
+    public ResponseEntity<ApiResponse<UserResponse>> getProfileV1() {
         return ResponseEntity.ok(ApiResponse.success(userService.getMyProfile()));
     }
 
-    @PutMapping("/profile")
-    @Operation(summary = "Cập nhật thông tin cá nhân (Cần Token)")
-    public ResponseEntity<ApiResponse<UserResponse>> updateProfile(@Valid @RequestBody UpdateProfileRequest request) {
+    @PutMapping("/api/v1/users/profile")
+    @Operation(summary = "Cập nhật thông tin cá nhân (v1)")
+    public ResponseEntity<ApiResponse<UserResponse>> updateProfileV1(@Valid @RequestBody UpdateProfileRequest request) {
         return ResponseEntity.ok(ApiResponse.success("Cập nhật thành công!", userService.updateMyProfile(request)));
     }
 
-    @PostMapping("/change-password")
-    @Operation(summary = "Đổi mật khẩu chủ động (Cần Token)")
-    public ResponseEntity<ApiResponse<String>> changePassword(@Valid @RequestBody ChangePasswordRequest request) {
+    @PostMapping("/api/v1/users/change-password")
+    @Operation(summary = "Đổi mật khẩu (v1)")
+    public ResponseEntity<ApiResponse<String>> changePasswordV1(@Valid @RequestBody ChangePasswordRequest request) {
         userService.changePassword(request);
         return ResponseEntity.ok(ApiResponse.success("Đổi mật khẩu thành công!", null));
     }
 
-    @DeleteMapping("/account")
-    @Operation(summary = "Khóa/Xóa mềm tài khoản của tôi (Cần Token)")
-    public ResponseEntity<ApiResponse<String>> deleteAccount() {
+    @DeleteMapping("/api/v1/users/account")
+    @Operation(summary = "Xóa tài khoản (v1)")
+    public ResponseEntity<ApiResponse<String>> deleteAccountV1() {
+        userService.deleteMyAccount();
+        return ResponseEntity.ok(ApiResponse.success("Đã khóa tài khoản thành công!", null));
+    }
+
+    // ====== v5 endpoints ======
+    @GetMapping("/v5/api/user/profile-app")
+    @Operation(summary = "Lấy thông tin profile (v5, cần Token)")
+    public ResponseEntity<ApiResponse<UserResponse>> getProfileApp() {
+        return ResponseEntity.ok(ApiResponse.success(userService.getMyProfile()));
+    }
+
+    @PutMapping("/v5/api/user/profile-app")
+    @Operation(summary = "Cập nhật thông tin profile (v5, cần Token)")
+    public ResponseEntity<ApiResponse<UserResponse>> updateProfileApp(@Valid @RequestBody UpdateProfileRequest request) {
+        return ResponseEntity.ok(ApiResponse.success("Cập nhật thành công!", userService.updateMyProfile(request)));
+    }
+
+    @PostMapping("/v5/api/user/change-password")
+    @Operation(summary = "Đổi mật khẩu (v5, cần Token)")
+    public ResponseEntity<ApiResponse<String>> changePasswordV5(@Valid @RequestBody ChangePasswordRequest request) {
+        userService.changePassword(request);
+        return ResponseEntity.ok(ApiResponse.success("Đổi mật khẩu thành công!", null));
+    }
+
+    @DeleteMapping("/v5/api/user/account")
+    @Operation(summary = "Xóa tài khoản (v5, cần Token)")
+    public ResponseEntity<ApiResponse<String>> deleteAccountV5() {
         userService.deleteMyAccount();
         return ResponseEntity.ok(ApiResponse.success("Đã khóa tài khoản thành công!", null));
     }

@@ -12,6 +12,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
 @RequiredArgsConstructor
 @Configuration
 @EnableWebSecurity
@@ -38,16 +39,28 @@ public class SecurityConfig {
                                 "/swagger-ui.html"
                         ).permitAll()
 
+                        // Legacy v1 public
                         .requestMatchers("/api/v1/auth/**").permitAll()
+
+                        // v5 public endpoints (no token required)
+                        .requestMatchers(
+                                "/v5/auth/login",
+                                "/v5/auth/login-with-password",
+                                "/v5/auth/verify-otp-code",
+                                "/v5/auth/resend-otp-code",
+                                "/v5/auth/register",
+                                "/v5/auth/forgot-password",
+                                "/v5/auth/update-password",
+                                "/v5/auth/get-account-status",
+                                "/v5/auth/refresh-token-new"
+                        ).permitAll()
 
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
-                // Tắt login mặc định
                 .formLogin(AbstractHttpConfigurer::disable)
                 .httpBasic(AbstractHttpConfigurer::disable);
 
         return http.build();
     }
-
 }
