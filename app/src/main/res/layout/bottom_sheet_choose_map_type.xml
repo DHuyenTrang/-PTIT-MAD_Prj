@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:paddingBottom="@dimen/activity_padding_horizontal"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_title1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_padding_horizontal"
+        android:text="Loại bản đồ"
+        android:textAppearance="@style/Gofa.TextBase.Bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnClose"
+        style="@style/Gofa.IconButton.Outline"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_margin="@dimen/activity_padding_horizontal"
+        app:icon="@drawable/ic_cancel"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_map_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_padding_horizontal"
+        android:layout_marginHorizontal="12dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/tv_title1"
+        tools:itemCount="4"
+        tools:listitem="@layout/item_map_type" />
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="@dimen/activity_padding_horizontal"
+        android:layout_marginVertical="@dimen/bottom_sheet_padding_vertical"
+        android:background="@color/outlineVariant"
+        app:layout_constraintTop_toBottomOf="@id/list_map_type" />
+
+    <TextView
+        android:id="@+id/tv_title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_padding_horizontal"
+        android:text="Chủ đề"
+        android:textAppearance="@style/Gofa.TextBase.Bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/list_map_type" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_map_theme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_padding_horizontal"
+        android:layout_marginHorizontal="12dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/tv_title2"
+        tools:itemCount="4"
+        tools:listitem="@layout/item_map_type" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="@dimen/activity_padding_horizontal"
+        android:layout_marginVertical="@dimen/bottom_sheet_padding_vertical"
+        android:background="@color/outlineVariant"
+        app:layout_constraintTop_toBottomOf="@id/list_map_theme" />
+
+    <TextView
+        android:id="@+id/tv_title3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_padding_horizontal"
+        android:text="Loại dữ liệu"
+        android:textAppearance="@style/Gofa.TextBase.Bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/list_map_theme" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_data_layers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_padding_horizontal"
+        android:layout_marginHorizontal="12dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/tv_title3"
+        tools:itemCount="4"
+        tools:listitem="@layout/item_map_type" />
+</androidx.constraintlayout.widget.ConstraintLayout>

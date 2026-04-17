@@ -1,40 +1,30 @@
 package com.n3t.mobile.data.api
 
-const val API_VERSION = "v5"
-
 object ApiEndPoint {
     // ====== AUTH ======
-    const val LOGIN = "/$API_VERSION/auth/login"
-    const val VERIFY_OTP = "/$API_VERSION/auth/verify-otp-code"
-    const val RESEND_OTP = "/$API_VERSION/auth/resend-otp-code"
-    const val INFORMATION = "/$API_VERSION/auth/information"
-    const val REFRESH_TOKEN = "/$API_VERSION/auth/refresh-token-new"
-    const val REGISTER = "/$API_VERSION/auth/register"
-    const val PASSWORD_FORGOT = "/$API_VERSION/auth/forgot-password"
-    const val PASSWORD_UPDATE = "/$API_VERSION/auth/update-password"
-    const val CHECK_PHONE_EXIST = "/$API_VERSION/auth/get-account-status"
-    const val LOGIN_WITH_PASSWORD = "/$API_VERSION/auth/login-with-password"
-    const val LOGOUT = "/$API_VERSION/auth/logout"
+    const val LOGIN = "/auth/login"
+    const val VERIFY_OTP = "/auth/verify-otp-code"
+    const val RESEND_OTP = "/auth/resend-otp-code"
+    const val INFORMATION = "/auth/information"
+    const val REFRESH_TOKEN = "/auth/refresh-token-new"
+    const val REGISTER = "/auth/register"
+    const val PASSWORD_FORGOT = "/auth/forgot-password"
+    const val PASSWORD_UPDATE = "/auth/update-password"
+    const val CHECK_EMAIL_EXIST = "/auth/get-account-status"
+    const val LOGIN_WITH_PASSWORD = "/auth/login-with-password"
+    const val LOGOUT = "/auth/logout"
 
     // ====== PROFILE ======
-    const val USER_PROFILE_APP = "/$API_VERSION/api/user/profile-app"
+    const val USER_PROFILE_APP = "/api/user/profile-app"
 
     // ====== LICENSE PLATE (Phạt nguội) ======
-    const val LICENSE_PLATE_QUERY = "/$API_VERSION/api/license-plate/query"
-    const val GET_LICENSE_PLATES = "/$API_VERSION/api/car/listLicensePlate"
-    const val DELETE_LICENSE_PLATE = "/$API_VERSION/api/car/deleteLicensePlate"
-    const val CAR_ADD = "/$API_VERSION/api/car/add"
-
-    // ====== SEARCH MAP ======
-    const val SEARCH_PLACE = "/$API_VERSION/Place/AutoComplete"
-    const val DETAIL_PLACE = "/$API_VERSION/Place/Detail"
-
-    // ====== ROUTING ======
-    const val SEARCH_ROUTE_V7 = "/v7/api/routing/search-route"
+    const val LICENSE_PLATE_QUERY = "/api/license-plate/query"
+    const val GET_LICENSE_PLATES = "/api/car/listLicensePlate"
+    const val DELETE_LICENSE_PLATE = "/api/car/deleteLicensePlate"
+    const val CAR_ADD = "/api/car/add"
 
     // ====== TRACKING / HISTORY ======
     const val TRACKING_MOVEMENT = "/tracking/movement"
-    const val TRACKING_MOVEMENT_V2 = "/v2/tracking/movement"
     const val TRACKING_HISTORY = "/tracking/history"
 
     // ====== REVERSE GEOCODING ======
@@ -48,4 +38,12 @@ object ApiEndPoint {
 
     // ====== MEDIA ======
     const val SEARCH_MEDIA = "/search"
+
+    // ====== STATION ======
+    const val GET_POIS_STATION = "api/stations"
+
+    // ====== GOONG ======
+    const val GOONG_AUTOCOMPLETE = "v2/place/autocomplete"
+    const val GOONG_DETAIL = "v2/place/detail"
+    const val GOONG_DIRECTION = "v2/direction"
 }

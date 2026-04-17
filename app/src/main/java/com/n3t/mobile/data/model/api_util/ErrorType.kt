@@ -7,3 +7,4 @@ enum class ErrorType {
 	SERVER_RESPONSE_ERROR,
 	OTHER,
 }
+

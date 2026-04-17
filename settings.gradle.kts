@@ -38,3 +38,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "N3T"
 include(":app")
+include(":lib-android-navigation")

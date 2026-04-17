@@ -14,7 +14,7 @@ data class ApiResponseFail(
     val code: Int? = null,
 )
 
-fun <T> Response<T>.toApiResponseFail(): ApiResponseFail? {
+fun <T> Response<T>.toGofaApiResponseFail(): ApiResponseFail? {
     return try {
         val gson = GsonBuilder().excludeFieldsWithoutExposeAnnotation().create()
         val errorBody = this.errorBody()?.string()
@@ -24,3 +24,10 @@ fun <T> Response<T>.toApiResponseFail(): ApiResponseFail? {
         null
     }
 }
+
+fun <T> Response<T>.toApiResponseFail(): ApiResponseFail? = this.toGofaApiResponseFail()
+
+fun Exception.toApiResponseFail(context: android.content.Context? = null): ApiResponseFail? {
+    return ApiResponseFail(this.message, -1)
+}
+

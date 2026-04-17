@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:background="@drawable/bg_dialog_calculate_route"
+    android:paddingBottom="20dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCloseDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_close"
+            style="@style/Gofa.IconButton.Outline"
+            app:iconTint="@color/error"
+            android:layout_gravity="end"/>
+    </LinearLayout>
+
+    <ProgressBar
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:background="@color/transparent"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/primary" />
+
+    <TextView
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/calculate_route"
+        android:textAppearance="@style/Gofa.TextLg.Bold"
+        android:textColor="@color/onSurfaceVariant" />
+</LinearLayout>

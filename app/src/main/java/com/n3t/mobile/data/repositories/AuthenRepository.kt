@@ -8,6 +8,7 @@ import com.n3t.mobile.data.model.api_util.ErrorType
 import com.n3t.mobile.data.model.api_util.Failure
 import com.n3t.mobile.data.model.api_util.toApiResponseFail
 import com.n3t.mobile.data.model.authen.LogoutResponse
+import com.google.gson.JsonElement
 import com.n3t.mobile.data.model.authen.login.*
 import com.n3t.mobile.data.model.authen.refresh_token.RefreshTokenRequest
 import com.n3t.mobile.data.model.authen.refresh_token.RefreshTokenResponse
@@ -17,15 +18,16 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 interface AuthenRepository {
-    suspend fun checkPhoneExist(phone: String): Either<Failure, GetAccountStatusResponse>
-    suspend fun login(data: LoginRequest): Either<Failure, LoginData?>
+    suspend fun checkEmailExist(email: String): Either<Failure, GetAccountStatusResponse>
     suspend fun loginWithPassword(data: LoginWithPasswordRequest): Either<Failure, LoginWithPasswordResponse?>
     suspend fun resendOtp(data: ReSendOtpRequest): Either<Failure, ReSendOtpResponse?>
     suspend fun verifyOTP(data: VerifyOTPRequest): Either<Failure, VerifyOTPData?>
+    suspend fun register(data: VerifyOTPRequest): Either<Failure, VerifyOTPData?>
     suspend fun refreshToken(data: RefreshTokenRequest): Either<Failure, RefreshTokenResponse?>
     suspend fun forgotPassword(data: PasswordForgotRequest): Either<Failure, PasswordForgotResponse?>
     suspend fun updatePassword(data: PasswordUpdateRequest): Either<Failure, PasswordUpdateResponse?>
     suspend fun logout(): Either<Failure, LogoutResponse?>
+    suspend fun getUserProfile(): Either<Failure, JsonElement>
 }
 
 class AuthenRepositoryImpl(
@@ -33,41 +35,30 @@ class AuthenRepositoryImpl(
     private val networkService: NetworkService,
 ) : AuthenRepository {
 
-    override suspend fun checkPhoneExist(phone: String): Either<Failure, GetAccountStatusResponse> =
+    override suspend fun checkEmailExist(email: String): Either<Failure, GetAccountStatusResponse> =
         withContext(Dispatchers.IO) {
             HandleApiResponse.whenInternetError(networkService)?.let {
                 return@withContext it
             }
             try {
-                val data = GetAccountStatus(phone)
-                val response = remoteDataSource.checkPhoneExist(data).execute()
+                val data = GetAccountStatus(email)
+                val response = remoteDataSource.checkEmailExist(data).execute()
                 if (response.isSuccessful) {
                     val body = response.body()
                     if (body != null) {
                         return@withContext Either.success(body)
                     }
                 }
-                val responseFail = response.toApiResponseFail()
+                val responseFail = response.toApiResponseFail()?.message
                 return@withContext Either.failure(
-                    Failure(ErrorType.SERVER_RESPONSE_ERROR, responseFail?.message, responseFail?.code)
+                    Failure(ErrorType.SERVER_RESPONSE_ERROR)
                 )
             } catch (e: Exception) {
-                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR, e.message))
+                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR))
             }
         }
 
-    override suspend fun login(data: LoginRequest): Either<Failure, LoginData?> =
-        withContext(Dispatchers.IO) {
-            HandleApiResponse.whenInternetError(networkService)?.let {
-                return@withContext it
-            }
-            try {
-                val response = remoteDataSource.login(data).execute()
-                return@withContext HandleApiResponse.processResponseData(response)
-            } catch (e: Exception) {
-                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR, e.message))
-            }
-        }
+
 
     override suspend fun loginWithPassword(data: LoginWithPasswordRequest): Either<Failure, LoginWithPasswordResponse?> =
         withContext(Dispatchers.IO) {
@@ -82,12 +73,12 @@ class AuthenRepositoryImpl(
                         return@withContext Either.success(body)
                     }
                 }
-                val responseFail = response.toApiResponseFail()
+                val responseFail = response.toApiResponseFail()?.message
                 return@withContext Either.failure(
-                    Failure(ErrorType.SERVER_RESPONSE_ERROR, responseFail?.message, responseFail?.code)
+                    Failure(ErrorType.SERVER_RESPONSE_ERROR)
                 )
             } catch (e: Exception) {
-                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR, e.message))
+                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR))
             }
         }
 
@@ -101,12 +92,12 @@ class AuthenRepositoryImpl(
                 if (response.isSuccessful) {
                     response.body()?.let { return@withContext Either.success(it) }
                 }
-                val responseFail = response.toApiResponseFail()
+                val responseFail = response.toApiResponseFail()?.message
                 return@withContext Either.failure(
-                    Failure(ErrorType.SERVER_RESPONSE_ERROR, responseFail?.message, responseFail?.code)
+                    Failure(ErrorType.SERVER_RESPONSE_ERROR)
                 )
             } catch (e: Exception) {
-                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR, e.message))
+                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR))
             }
         }
 
@@ -118,12 +109,34 @@ class AuthenRepositoryImpl(
                 if (response.isSuccessful) {
                     response.body()?.let { return@withContext Either.success(it) }
                 }
-                val responseFail = response.toApiResponseFail()
+                val responseFail = response.toApiResponseFail()?.message
                 return@withContext Either.failure(
-                    Failure(ErrorType.SERVER_RESPONSE_ERROR, responseFail?.message, responseFail?.code)
+                    Failure(ErrorType.SERVER_RESPONSE_ERROR)
                 )
             } catch (e: Exception) {
-                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR, e.message))
+                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR))
+            }
+        }
+
+    override suspend fun register(data: VerifyOTPRequest): Either<Failure, VerifyOTPData?> =
+        withContext(Dispatchers.IO) {
+            HandleApiResponse.whenInternetError(networkService)?.let { return@withContext it }
+            try {
+                // Notice that `register` in N3TApiService returns ApiResponse<VerifyOTPData>, we need to map it if needed.
+                val response = remoteDataSource.register(data).execute()
+                if (response.isSuccessful) {
+                    // Extracting the data field from ApiResponse
+                    val body = response.body()
+                    if (body != null && body.success == true) {
+                        return@withContext Either.success(body.data)
+                    }
+                }
+                val responseFail = response.toApiResponseFail()?.message
+                return@withContext Either.failure(
+                    Failure(ErrorType.SERVER_RESPONSE_ERROR)
+                )
+            } catch (e: Exception) {
+                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR))
             }
         }
 
@@ -135,12 +148,12 @@ class AuthenRepositoryImpl(
                 if (response.isSuccessful) {
                     response.body()?.let { return@withContext Either.success(it) }
                 }
-                val responseFail = response.toApiResponseFail()
+                val responseFail = response.toApiResponseFail()?.message
                 return@withContext Either.failure(
-                    Failure(ErrorType.SERVER_RESPONSE_ERROR, responseFail?.message, responseFail?.code)
+                    Failure(ErrorType.SERVER_RESPONSE_ERROR)
                 )
             } catch (e: Exception) {
-                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR, e.message))
+                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR))
             }
         }
 
@@ -152,12 +165,12 @@ class AuthenRepositoryImpl(
                 if (response.isSuccessful) {
                     response.body()?.let { return@withContext Either.success(it) }
                 }
-                val responseFail = response.toApiResponseFail()
+                val responseFail = response.toApiResponseFail()?.message
                 return@withContext Either.failure(
-                    Failure(ErrorType.SERVER_RESPONSE_ERROR, responseFail?.message, responseFail?.code)
+                    Failure(ErrorType.SERVER_RESPONSE_ERROR)
                 )
             } catch (e: Exception) {
-                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR, e.message))
+                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR))
             }
         }
 
@@ -169,12 +182,12 @@ class AuthenRepositoryImpl(
                 if (response.isSuccessful) {
                     response.body()?.let { return@withContext Either.success(it) }
                 }
-                val responseFail = response.toApiResponseFail()
+                val responseFail = response.toApiResponseFail()?.message
                 return@withContext Either.failure(
-                    Failure(ErrorType.SERVER_RESPONSE_ERROR, responseFail?.message, responseFail?.code)
+                    Failure(ErrorType.SERVER_RESPONSE_ERROR)
                 )
             } catch (e: Exception) {
-                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR, e.message))
+                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR))
             }
         }
 
@@ -186,12 +199,29 @@ class AuthenRepositoryImpl(
                 if (response.isSuccessful) {
                     response.body()?.let { return@withContext Either.success(it) }
                 }
-                val responseFail = response.toApiResponseFail()
+                val responseFail = response.toApiResponseFail()?.message
                 return@withContext Either.failure(
-                    Failure(ErrorType.SERVER_RESPONSE_ERROR, responseFail?.message, responseFail?.code)
+                    Failure(ErrorType.SERVER_RESPONSE_ERROR)
                 )
             } catch (e: Exception) {
-                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR, e.message))
+                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR))
+            }
+        }
+
+    override suspend fun getUserProfile(): Either<Failure, JsonElement> =
+        withContext(Dispatchers.IO) {
+            HandleApiResponse.whenInternetError(networkService)?.let { return@withContext it }
+            try {
+                val response = remoteDataSource.getUserProfile().execute()
+                if (response.isSuccessful) {
+                    response.body()?.let { return@withContext Either.success(it) }
+                        ?: return@withContext Either.failure(Failure(ErrorType.SERVER_RESPONSE_ERROR))
+                }
+                return@withContext Either.failure(Failure(ErrorType.SERVER_RESPONSE_ERROR))
+            } catch (e: Exception) {
+                return@withContext Either.failure(Failure(ErrorType.SERVER_ERROR))
             }
         }
 }
+
+

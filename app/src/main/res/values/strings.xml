@@ -55,6 +55,9 @@
     <string name="personal_info">Thông tin cá nhân</string>
     <string name="save">Lưu</string>
     <string name="cancel">Hủy</string>
+    <string name="full_name">Họ và tên</string>
+    <string name="delete_account">Xoá tài khoản</string>
+    <string name="feature_developing">Tính năng đang phát triển</string>
 
     <!-- Errors -->
     <string name="error_lost_internet">Mất kết nối internet</string>
@@ -69,4 +72,485 @@
     <string name="ok">OK</string>
     <string name="loading">Đang tải…</string>
     <string name="success">Thành công</string>
+
+    <!-- Merged from gofa -->
+    <string name="location_permission_title">Quyền truy cập vị trí</string>
+    <string name="location_permission_message">Ứng dụng không thể hiển thị vị trí của bạn trên bản đồ vì đã bị từ chối truy cập vị trí. Vui lòng cấp quyền truy cập vị trí trong cài đặt ứng dụng.</string>
+    <string name="location_permission_button">Cài đặt</string>
+    <string name="location_permission_go_to_setting">Đi đến cài đặt</string>
+    <string name="location_permission_cancel">Hủy</string>
+    <string name="search_address">Tìm kiếm địa điểm</string>
+    <string name="traffic_vov">VOV giao thông</string>
+    <string name="login_success">Đăng nhập thành công</string>
+    <string name="change_password_success">Đổi mật khẩu thành công</string>
+    <string name="update_password_success">Cập nhật mật khẩu thành công</string>
+    <string name="register_sucess">Đăng ký thành công</string>
+    <string name="register_account">Đăng ký tài khoản</string>
+    <string name="register_account_decription">Bạn chưa có tài khoản GOFA, để đăng ký tài khoản vui lòng nhập mã OTP đã được gửi tới tài khoản</string>
+    <string name="zalo">Zalo</string>
+    <string name="error_validate_password">Mật khẩu phải dài từ 8 ký tự trở lên và có ít nhất 1 chữ hoa và 1 chữ số</string>
+    <string name="set_password">Đặt lại mật khẩu</string>
+    <string name="update_password">Cập nhật mật khẩu</string>
+    <string name="forgot_password_description">Quên mật khẩu?</string>
+    <string name="login_description">Trải nghiệm hành trình của bạn\ncùng GOFA</string>
+    <string name="current_password">Mật khẩu hiện tại</string>
+    <string name="confirm_new_password">Nhập lại mật khẩu mới</string>
+    <string name="not_have_account">Chưa có tài khoản?</string>
+    <string name="have_account">Đã có tài khoản?</string>
+    <string name="register_here">Đăng ký ngay</string>
+    <string name="term_of_service">Điều khoản dịch vụ</string>
+    <string name="payment_policy">Chính sách thanh toán</string>
+    <string name="gofa_info">Thông tin về công ty</string>
+    <string name="payment_introduction">Hướng dẫn thanh toán</string>
+    <string name="go_gpt_introduction">Hướng dẫn sử dụng GO-GPT</string>
+    <string name="refund_policy">Chính sách hoàn huỷ</string>
+    <string name="payment_method_vnpay_1">1. Phương thức thanh toán qua "Ứng dụng thanh toán hỗ trợ VNPAY-QR"</string>
+    <string name="payment_method_vnpay_2">2. Phương thức thanh toán qua "Thẻ nội địa và tài khoản ngân hàng"</string>
+    <string name="payment_method_vnpay_3">3. Phương thức thanh toán qua "Thẻ thanh toán quốc tế (Visa, MasterCard, JCB, UnionPay)"</string>
+    <string name="payment_method_vnpay_3_des">Tương tự như phương thức thanh toán “Thẻ nội địa và tài khoản ngân hàng”</string>
+    <string name="payment_method_vnpay_4">4. Phương thức thanh toán qua "Ví điện tử VNPAY"</string>
+    <string name="payment_method_vnpay_4_des">Tương tự như phương thức thanh toán “Ứng dụng thanh toán hỗ trợ VNPAY-QR”</string>
+    <string name="vnpay_description">Cổng thanh toán VNPAY là giải pháp thanh toán do Công ty Cổ phần Giải pháp Thanh toán Việt Nam (VNPAY) phát triển.
+        Khách hàng sử dụng thẻ/tài khoản ngân hàng, tính năng QR Pay/VNPAY-QR được tích hợp sẵn trên ứng dụng Mobile Banking của các ngân hàng hoặc Ví điện tử liên kết để thanh toán các giao dịch và nhập mã giảm giá (nếu có)</string>
+    <string name="payment_method_vnpay_qr_1">Bước 1: Quý khách lựa chọn sản phẩm, dịch vụ và chọn Thanh toán ngay hoặc Đặt hàng </string>
+    <string name="payment_method_vnpay_qr_1_des">Tại trang thanh toán, vui lòng kiểm tra lại sản phẩm đã đặt,
+        điền đầy đủ thông tin người nhận hàng,
+        chọn phương thức thanh toán VNPAY và nhấn nút “Đặt hàng ngay”.
+    </string>
+    <string name="payment_method_vnpay_qr_2">Bước 2: Màn hình thanh toán chuyển sang giao diện cổng thanh toán VNPAY.
+        Chọn phương thức “Ứng dụng thanh toán hỗ trợ VNPAY-QR”</string>
+    <string name="payment_method_vnpay_qr_3">
+        Bước 3: Hệ thống hiển thị mã QR cùng với số tiền cần thanh toán, Quý khách kiểm tra lại số tiền này.
+        Sử dụng ứng dụng ngân hàng (theo danh sách liệt kê), chọn “Quét Mã” và tiến hành quét mã QR trên màn hình thanh toán website
+    </string>
+    <string name="payment_method_vnpay_qr_3_note">
+        "*Lưu ý: Mã QR sẽ hết hạn sau 15 phút."
+    </string>
+    <string name="payment_method_vnpay_qr_3_des">
+        Để quá trình thanh toán thành công,
+        khách hàng vui lòng tham khảo trước các điều kiện và thao tác quét mã trên điện thoại để sẵn sàng,
+        tránh sự cố hết thời gian ảnh hưởng đến thanh toán và mã khuyến mại của quý khách.
+    </string>
+    <string name="payment_method_vnpay_qr_4">
+        Bước 4: Kiểm tra thông tin, nhập mã giảm giá (nếu có) và hoàn tất thanh toán
+    </string>
+    <string name="payment_method_vnpay_qr_4_des">
+        Khi thực hiện thanh toán hoàn tất Quý khách sẽ nhận được thông báo xác nhận đơn hàng đặt hàng thành công tại website
+    </string>
+    <string name="payment_method_banking_b1">
+        Bước 1: Quý khách lựa chọn sản phẩm, dịch vụ và chọn Thanh toán ngay hoặc Đặt hàng
+    </string>
+    <string name="payment_method_banking_b1_des">
+        Tại trang thanh toán, vui lòng kiểm tra lại sản phẩm đã đặt, điền đầy đủ thông tin người nhận hàng, chọn phương thức thanh toán VNPAY và nhấn nút “Đặt hàng ngay”.    </string>
+    <string name="payment_method_banking_b2">
+        Bước 2: Màn hình thanh toán chuyển sang giao diện cổng thanh toán VNPAY.
+        Chọn phương thức “Thẻ nội địa và tài khoản ngân hàng” và chọn ngân hàng muốn thanh toán thẻ trong danh sách.
+    </string>
+    <string name="payment_method_banking_b3">
+        Bước 3: Quý khách vui lòng thực hiện nhập các thông tin thẻ/tài khoản theo yêu cầu và chọn “Tiếp tục”.
+        Mã OTP sẽ được gửi về điện thoại đăng ký, nhập mã OTP để hoàn tất giao dịch.
+    </string>
+    <string name="payment_method_banking_b3_note">
+        "*Lưu ý: Giao dịch sẽ hết hạn sau 15 phút."
+    </string>
+    <string name="payment_method_banking_b4">
+        Bước 4: Khi thực hiện thanh toán hoàn tất Quý khách sẽ nhận được thông báo xác nhận đơn hàng đặt hàng thành công tại website.
+    </string>
+    <string name="term_of_usage">Điều khoản sử dụng</string>
+    <string name="privacy_policy">Chính sách bảo mật</string>
+    <string name="term_of_service_guide">Nhấn vào nút \"Đăng ký\" đồng nghĩa với việc bạn đồng ý</string>
+    <string name="and">và</string>
+    <string name="of_gofa">của GOFA</string>
+    <string name="enter_your_phone_number">Vui lòng nhập số điện thoại của bạn</string>
+    <string name="set_password_description">Vui lòng đặt lại mật khẩu dài trên 8 ký tự và có ít nhất 1 chữ hoa và 1 chữ số</string>
+    <string name="send_info">Gửi thông tin</string>
+    <string name="save_password">Lưu mật khẩu</string>
+    <string name="contribute">Góp ý</string>
+    <string name="speed_limit">Tốc độ giới hạn</string>
+    <string name="traffic_sign">Biển báo</string>
+    <string name="traffic_camera">Camera</string>
+    <string name="accident">Tai nạn</string>
+    <string name="road_closure">Tắc đường</string>
+    <string name="flood">Ngập lụt</string>
+    <string name="image">Ảnh</string>
+    <string name="comment">Bình luận</string>
+    <string name="send">Gửi</string>
+    <string name="exit">Thoát</string>
+    <string name="required">Bắt buộc</string>
+    <string name="require_take_photo">Yêu cầu chụp ảnh hiện trường</string>
+    <string name="setting">Cài đặt</string>
+    <string name="account">Tài khoản</string>
+    <string name="view_account">Xem tài khoản</string>
+    <string name="contribution_history">Lịch sử đóng góp</string>
+    <string name="device_management">Quản lý thiết bị</string>
+    <string name="theme">Chủ đề</string>
+    <string name="light">Sáng</string>
+    <string name="dark">Tối</string>
+    <string name="map3d">3D</string>
+    <string name="map_satellite">Vệ tinh</string>
+    <string name="auto">Tự động</string>
+    <string name="sound">Âm thanh</string>
+    <string name="traffic_alert">Cảnh báo giao thông</string>
+    <string name="hey_gofa">Hey GOFA</string>
+    <string name="activate_hey_gofa">GO GPT</string>
+    <string name="sample_utterance">Câu lệnh mẫu</string>
+    <string name="speeding_alert">Thông báo phạt nguội</string>
+    <string name="payment_permission">Phiên bản free không hỗ trợ Apple Carplay / Android Auto</string>
+    <string name="change_focus_view">Chế độ “Không bản đồ”</string>
+    <string name="change_focus_view_in_mobile">Chế độ "Không bản đồ" không áp dụng trên Apple Carplay hoặc Android Auto</string>
+    <string name="introduce_app">Giới thiệu ứng dụng</string>
+    <string name="done">Xong</string>
+    <string name="theme_auto_description">Thay đổi theo hệ thống</string>
+    <string name="theme_light_description">Luôn ở chế độ sáng</string>
+    <string name="theme_dark_description">Luôn ở chế độ tối</string>
+    <string name="house">Nhà</string>
+    <string name="saved">Đã lưu</string>
+    <string name="street">Đường</string>
+    <string name="district">Quận</string>
+    <string name="city">Thành phố</string>
+    <string name="province">Tỉnh</string>
+    <string name="country">Quốc gia</string>
+    <string name="recent">Gần đây</string>
+    <string name="traffic_news">Bản tin giao thông</string>
+    <string name="search_fine">Tra cứu phạt nguội</string>
+    <string name="edit">Chỉnh sửa</string>
+    <string name="edit_route">Chỉnh sửa đường đi</string>
+    <string name="complete">Hoàn thành</string>
+    <string name="search_fine_button_title">Tra cứu</string>
+    <string name="wrong_otp">Mã OTP không chính xác!</string>
+    <string name="error_send_to_server">Không thể gửi dữ liệu đến máy chủ</string>
+    <string name="invalid_data_from_server">Dữ liệu không hợp lệ</string>
+    <string name="error_some_thing_wrong">Xảy ra lỗi vui lòng thử lại</string>
+    <string name="error_invalid_phone_number">Số điện thoại không hợp lệ</string>
+    <string name="error_phone_number_not_empty">Số điện thoại không được để trống</string>
+    <string name="error_password_not_empty">Mật khẩu không được để trống</string>
+    <string name="error_password_not_match">Mật khẩu không trùng khớp</string>
+    <string name="error_confirm_password_not_empty">Xác nhận mật khẩu không được để trống</string>
+    <string name="map">Bản đồ</string>
+    <string name="distance_alert">Khoảng cách báo trước</string>
+    <string name="distance_alert_description">Cảnh báo trước khi tới đoạn đường có biển báo</string>
+    <string name="gps_speed">Tốc độ GPS</string>
+    <string name="gps_speed_description">Hiệu chỉnh tốc độ GPS trên ứng dụng so với thực tế.</string>
+    <string name="app_introduce">Giới thiệu ứng dụng</string>
+    <string name="app_introduce_description">
+        Nhằm phục vụ người sử dụng ô tô tại Việt Nam di chuyển AN TOÀN, TIỆN LỢI, DỄ DÀNG, chúng tôi phát triển ứng dụng GOFA với các tính năng:\n
+        \n1. Phần mềm dẫn đường kết hợp cảnh báo giao thông: Biển báo tốc độ giới hạn, Biển báo ra vào khu dân cư, Biển báo tới đoạn đường cấm vượt, Camera giao thông, Camera theo dõi tốc độ.
+        \n2. Hoạt động trên tất cả các nền tảng iOS, Apple Carplay, Mobile Android, Android Auto, DVD Android, Android Box.
+        \n3. Cung cấp bản đồ số Việt Nam với 2 nền bản đồ sáng và tối, đảm bảo chủ quyền lãnh thổ quốc gia.
+        \n4. Tìm địa chỉ chi tiết Việt Nam, dữ liệu phủ khắp 63 tỉnh thành.
+        \n5. Thuật toán chỉ đường tối ưu nhanh nhất với nhiều gợi ý.
+        \n6. Cung cấp tính năng dẫn đường, tự động gọi lại đường khi đi sai.
+        \n7. Cung cấp tính năng tra cứu phạt nguội, tự động thông báo khi xe của bạn có hồ sơ vi phạm.
+        \n8. Cung cấp tính năng tra cứu lịch sử di chuyển.
+        \n9. Cung cấp tính năng nghe VOV giao thông.
+        \n10. Cung cấp tính năng bản tin giao thông thời gian thực.
+    </string>
+    <string name="term_service_des">
+        1. Dịch vụ áp dụng với tất cả người dùng ứng dụng GOFA.
+        \n2. Người dùng kích hoạt mã kích hoạt hoặc đăng ký mua gói trên ứng dụng GOFA.
+        \n3. Sau khi kích hoạt thành công, hệ thống tự động nâng cấp (với người dùng từ gói Free) và tăng thời hạn sử dụng gói của người dùng.
+        \n4. Người dùng có thể gia hạn dịch vụ bằng cách kích hoạt key mới hoặc mua gói trực tiếp trên ứng dụng GOFA.
+        \n5. Khi đã đăng ký nâng cấp gói thành công, người dùng sẽ được sử dụng các quyền lợi tương ứng với gói.
+    </string>
+    <string name="gofa_information">Thông tin về GOFA</string>
+    <string name="gofa_information_description">
+        Gofa là ứng dụng được phát triển với mong muốn mang tới những đồng góp tích cực cho cộng đồng người lái xe tại Việt Nam,
+        qua đó giảm các vẫn đề phát sinh khi tham gia giao thông và đảm bảo an toàn tối đa trên mỗi chặng hành trình gần xa.
+        GOFA mang tầm nhìn trở thành nền tảng ứng dụng số hỗ trợ tất cả nhu cầu của người lái xe ô tô trên mỗi chặng đường và sứ mệnh trở thành người bạn đồng hành tin cậy,
+        thân thiện và gắn kết với người lái xe ô tô. Mang lại sự hữu ích và an toàn trên mỗi hành trình
+    </string>
+    <string name="share">Chia sẻ</string>
+    <string name="warning_volume">Âm lượng cảnh báo</string>
+    <string name="reduce_system_volume">Giảm âm lượng hệ thống</string>
+    <string name="reduce_system_volume_description">Khi bật, âm lượng của hệ thống sẽ được giảm khi có cảnh báo và sẽ trở về âm lượng cũ khi hết cảnh báo.</string>
+    <string name="speed_limit_alert">Cảnh báo vượt quá tốc độ</string>
+    <string name="voice">Giọng nói</string>
+    <string name="beep">Tiếng bíp</string>
+    <string name="off">Tắt</string>
+    <string name="sound_alert">Cảnh báo âm thanh</string>
+    <string name="in_out_residential_area">Ra / vào khu dân cư</string>
+    <string name="no_overtaking">Cấm vượt</string>
+    <string name="end_no_overtaking">Hết cấm vượt</string>
+    <string name="start_stop_overtaking">Cấm vượt / Hết cấm vượt</string>
+    <string name="toll_station">Sắp đến trạm thu phí</string>
+    <string name="turn">Rẽ</string>
+    <string name="next_speed_limit">Tốc độ giới hạn tiếp theo</string>
+    <string name="view_route">Xem đường đi</string>
+    <string name="route">Tuyến đường</string>
+    <string name="start_route">Bắt đầu</string>
+    <string name="current_location">Vị trí hiện tại</string>
+    <string name="best_route">Đường tốt nhất</string>
+    <string name="hour">giờ</string>
+    <string name="minute">phút</string>
+    <string name="second">giây</string>
+    <string name="short_minute">ph</string>
+    <string name="_short_second">s</string>
+    <string name="short_hour">h</string>
+    <string name="hours">giờ</string>
+    <string name="minutes">phút</string>
+    <string name="seconds">giây</string>
+    <string name="map_setting">Cài đặt bản đồ</string>
+    <string name="vov_source">Nguồn VOV giao thông</string>
+    <string name="straight">Đi thẳng</string>
+    <string name="u_turn">Quay đầu</string>
+    <string name="turn_left">Rẽ trái</string>
+    <string name="turn_right">Rẽ phải</string>
+    <string name="slight_left">Chếch hướng trái</string>
+    <string name="slight_right">Chếch hướng phải</string>
+    <string name="sharp_left">Quẹo trái</string>
+    <string name="sharp_right">Quẹo phải</string>
+    <string name="convert_round_about">Vào vòng xuyến</string>
+    <string name="convert_exit_round_about">Thoát khỏi vòng xuyến</string>
+    <string name="no_license_plate">Chưa có biển số</string>
+    <string name="add_license_plate">Thêm biển</string>
+    <string name="delete_fine_button_title">Xóa</string>
+    <string name="clear_license_plate">Xoá tất cả</string>
+    <string name="invalid_license_plate_number">Biển số không hợp lệ</string>
+    <string name="most_recent">Gần đây nhất</string>
+    <string name="no_history_detail">Bạn không di chuyển cùng GOFA trong ngày này</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_phone_number">Không có số điện thoại</string>
+    <string name="center">Trung tâm</string>
+    <string name="no_blank_license_plate">Không để trống biển số xe</string>
+    <string name="incorrect_format">Vui lòng nhập đúng định dạng biển số xe</string>
+    <string name="save_location">Lưu vị trí</string>
+    <string name="name">Tên</string>
+    <string name="save_is_home">Lưu là nhà</string>
+    <string name="save_is_office">Lưu là cơ quan</string>
+    <string name="save_is_favorite">Địa điểm yêu thích</string>
+    <string name="resend_otp_after">Gửi lại mã OTP sau</string>
+    <string name="not_received_otp">Không nhận được mã OTP?</string>
+    <string name="verify_account_instruction">Mã OTP đã được gửi tới Email</string>
+    <string name="verify_account_instruction_zalo">Mã OTP đã được gửi tới tài khoản Zalo</string>
+    <string name="resend"><u>Gửi lại</u></string>
+    <string name="resend_sms"><u>Gửi lại qua Email</u></string>
+    <string name="verify_account">Xác thực tài khoản</string>
+    <string name="verify_otp">Xác thực OTP</string>
+    <string name="session_expired">Phiên làm việc đã hết hạn</string>
+    <string name="calculate_route">Tính toán đường đi</string>
+    <string name="start_point">Điểm đầu</string>
+    <string name="end_point">Điểm cuối</string>
+    <string name="distance">Độ dài</string>
+    <string name="duration">Thời gian</string>
+    <string name="speed">Tốc độ</string>
+    <string name="over_speed">Vượt tốc</string>
+    <string name="time">lần</string>
+    <string name="playback_speed">Tốc độ xem lại</string>
+    <string name="over_limit_msg">Bạn chỉ được chọn 1 ảnh</string>
+    <string name="capture_new_image">Chụp ảnh</string>
+    <string name="change_album_text">Thay đổi album</string>
+    <string name="permission_storage_never_ask">Ứng dụng không thể truy cập vào bộ nhớ của bạn. Vui lòng cấp quyền truy cập bộ nhớ trong cài đặt ứng dụng.</string>
+    <string name="all_images">Tất cả ảnh</string>
+    <string name="send_feedback_success">Gửi phản hồi thành công</string>
+    <string name="send_feedback_fail">Gửi phản hồi thất bại</string>
+    <string name="request_to_take_photos_of_the_scene">Yêu cầu chụp ảnh hiện trường</string>
+    <string name="set_up_place">Cài đặt vị trí</string>
+    <string name="notification">Thông báo</string>
+    <string name="check_delete_license_plate">Bạn có chắc chắn muốn xoá biển số xe này không?</string>
+    <string name="delete_license_plate">Xóa</string>
+    <string name="cancel_delete">Hủy</string>
+    <string name="check_clear_license_plate">Bạn có chắc chắn muốn xoá tất cả biển số xe không?</string>
+    <string name="skip">Bỏ qua</string>
+    <string name="add_comment">Thêm bình luận</string>
+    <string name="road_unnamed">Đường không có tên</string>
+    <string name="location_name">Tên địa điểm</string>
+    <string name="traffic_sign_outside_app">Bong bóng giao thông</string>
+    <string name="user_display_outside_app">Hiển thị trên ứng dụng khác</string>
+    <string name="user_display_outside_app_description">GOFA hiển thị cảnh báo trên ứng dụng khác khi ứng dụng đang được sử dụng hoặc chạy nền, để cho phép hoạt động các tính năng: \"Popup cảnh báo trên ứng dụng khác\"</string>
+    <string name="gofa">GOFA</string>
+    <string name="user_location">Sử dụng vị trí</string>
+    <string name="user_location_description">GOFA thu thập dữ liệu vị trí khi ứng dụng đang được sử dụng để cho phép hoạt động các tính năng: \"Bản đồ\", \"Cảnh báo\", \"Dẫn đường\", \"Tìm kiếm\"</string>
+    <string name="user_location_description2">
+        Để sử dụng tính năng \"Popup cảnh báo trên ứng dụng khác\", vui lòng cho phép GOFA sử dụng dữ liệu vị trí khi ứng dụng đang được chạy nền bằng cách chọn quyền truy cập vị trí: \"Luôn cho phép\"</string>
+    <string name="enable_location">Bật vị trí</string>
+    <string name="you_have_not_saved_an_address_for_the_house">Bạn chưa lưu địa chỉ cho Nhà</string>
+    <string name="you_have_not_saved_an_address_for_the_office">Bạn chưa lưu địa chỉ cho Cơ Quan</string>
+    <string name="the_name_of_your_favorite_place_cannot_be_left_blank">Không được để trống tên địa điểm yêu thích</string>
+    <string name="the_name_already_exists">Tên đã tồn tại</string>
+    <string name="do_you_want_to_save_this_address_as_home">Bạn có muốn lưu địa chỉ này là Nhà không ?</string>
+    <string name="do_you_want_to_save_this_address_as_office">Bạn có muốn lưu địa chỉ này là Cơ Quan không ?</string>
+    <string name="on">Bật</string>
+    <string name="outside_app_permission">Để sử dụng tính năng bạn cần cho phép GOFA truy cập quyền vị trí và quyền hiển thị trên ứng dụng khác</string>
+    <string name="outside_app_enable">Bật</string>
+    <string name="outside_app_disable">Tắt</string>
+    <string name="outside_app_permission_location_required">Yêu cầu quyền vị trí</string>
+    <string name="outside_app_permission_display">Yêu cầu quyền hiển thị trên ứng dụng khác</string>
+    <string name="outside_app_permission_location">Quyền luôn cho phép truy cập vị trí</string>
+    <string name="outside_app_permission_microphone">Quyền thu microphone</string>
+    <string name="permission_disable">Chưa cấp quyền</string>
+    <string name="permission_enable">Cho phép</string>
+    <string name="request_login">Bạn cần đăng nhập trên điện thoại để sử dụng Android Auto</string>
+    <string name="request_update">Bạn cần cập nhật mật khẩu trên điện thoại để sử dụng Android Auto</string>
+    <string name="request_permission_to_work">Bạn phải cho phép GOFA truy cập quyền vị trí để sử dụng ứng dụng</string>
+    <string name="request_permission_audio">Bạn phải cho phép GOFA truy cập quyền ghi âm để sử dụng ứng dụng</string>
+    <string name="grant_permission">Cấp quyền</string>
+    <string name="approved">Được cho phép</string>
+    <string name="rejected">Bị từ chối</string>
+    <string name="permission_approved">Quyền truy cập vị trí đã được cho phép</string>
+    <string name="permission_approved_audio">Quyền truy cập ghi âm đã được cho phép</string>
+    <string name="permission_rejected">Quyền truy cập shi âm đã bị từ chối</string>
+    <string name="permission_rejected_audio">Quyền truy cập vị trí đã được cho phép</string>
+    <string name="no_result">Không có kết quả phù hợp</string>
+    <string name="add_destination">Thêm điểm đến</string>
+    <string name="search">Tìm kiếm</string>
+    <string name="latest">Gần đây</string>
+    <string name="favorites_place">Địa điểm yêu thích</string>
+    <string name="road_selected">Đường đang chọn</string>
+    <string name="connected_android_auto">Đang kết nối với Android Auto</string>
+    <string name="no_route_found">Không tìm thấy đường đi</string>
+    <string name="unable_to_get_location">Không thể lấy vị trí hiện tại</string>
+    <string name="unable_to_load_place_detail">Không thể tải chi tiết địa điểm</string>
+    <string name="unable_to_load_route">Không thể tải tuyến đường</string>
+    <string name="next">Tiếp tục</string>
+    <string name="signInGG">Đăng nhập với Google</string>
+    <string name="signInPhonenumber">Phương thức khác</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="previous">Previous</string>
+    <string name="lorem_ipsum">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
+        volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
+        dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
+        litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend
+        diam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,
+        ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\n
+        Suspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamus
+        egestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sed
+        neque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuada
+        fames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae,
+        molestie nibh. Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor
+        bibendum, vel congue leo egestas.\n\n
+        Sed interdum tortor nibh, in sagittis risus mollis quis. Curabitur mi odio, condimentum sit
+        amet auctor at, mollis non turpis. Nullam pretium libero vestibulum, finibus orci vel,
+        molestie quam. Fusce blandit tincidunt nulla, quis sollicitudin libero facilisis et. Integer
+        interdum nunc ligula, et fermentum metus hendrerit id. Vestibulum lectus felis, dictum at
+        lacinia sit amet, tristique id quam. Cras eu consequat dui. Suspendisse sodales nunc ligula,
+        in lobortis sem porta sed. Integer id ultrices magna, in luctus elit. Sed a pellentesque
+        est.\n\n
+        Aenean nunc velit, lacinia sed dolor sed, ultrices viverra nulla. Etiam a venenatis nibh.
+        Morbi laoreet, tortor sed facilisis varius, nibh orci rhoncus nulla, id elementum leo dui
+        non lorem. Nam mollis ipsum quis auctor varius. Quisque elementum eu libero sed commodo. In
+        eros nisl, imperdiet vel imperdiet et, scelerisque a mauris. Pellentesque varius ex nunc,
+        quis imperdiet eros placerat ac. Duis finibus orci et est auctor tincidunt. Sed non viverra
+        ipsum. Nunc quis augue egestas, cursus lorem at, molestie sem. Morbi a consectetur ipsum, a
+        placerat diam. Etiam vulputate dignissim convallis. Integer faucibus mauris sit amet finibus
+        convallis.\n\n
+        Phasellus in aliquet mi. Pellentesque habitant morbi tristique senectus et netus et
+        malesuada fames ac turpis egestas. In volutpat arcu ut felis sagittis, in finibus massa
+        gravida. Pellentesque id tellus orci. Integer dictum, lorem sed efficitur ullamcorper,
+        libero justo consectetur ipsum, in mollis nisl ex sed nisl. Donec maximus ullamcorper
+        sodales. Praesent bibendum rhoncus tellus nec feugiat. In a ornare nulla. Donec rhoncus
+        libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
+        vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
+    </string>
+    <string name="upgradeGofaPro">Nâng cấp GOFA Premium</string>
+    <string name="upgradeGofaProDescription1">Bạn đang nâng cấp gói GOFA Pro</string>
+    <string name="upgradeGofaProDescription2">Nếu bạn đã mua mã kích hoạt từ đại lý của GOFA, bạn có thể nâng cấp sử dụng mã kích hoạt.</string>
+    <string name="upgradeGofaProDescription3">Bạn cũng có thể mua gói GOFA Pro trực tiếp ở trên ứng dụng GOFA.</string>
+    <string name="useActiveCode">Sử dụng mã kích hoạt để nâng cấp</string>
+    <string name="buyNewPackage">Nâng cấp</string>
+    <string name="buyPackage">Mua gói</string>
+    <string name="upgrade">Nâng cấp</string>
+    <string name="activeCode">Mã kích hoạt</string>
+    <string name="benefits">Quyền lợi của gói Pro</string>
+    <string name="receiverAllBoard">"Nhận tất cả các biển báo giao thông"</string>
+    <string name="search_address_hint">Tìm kiếm địa chỉ, đường đi</string>
+    <string name="hide_banner_ad">Ẩn quảng cáo banner</string>
+    <string name="hide_sound_ad">Ẩn quảng cáo âm thanh</string>
+    <string name="hide_map_ad">Ẩn quảng cáo trên bản đồ</string>
+    <string name="add5Car">+5 biểu tượng xe</string>
+    <string name="checkmark">Checkmark</string>
+    <string name="signature">Signature</string>
+    <string name="activeCodeLicenseSucess">Kích hoạt gói Pro thành công</string>
+    <string name="waitingProcessLicense">Đang xử lý nâng cấp gói</string>
+    <string name="go_gpt_intro_step1">Bước 1: Cấu Hình Ngôn Ngữ Của Máy Sang Tiếng Việt</string>
+    <string name="go_gpt_intro_des">Để sử dụng tính năng GO-GPT trên các thiết bị Android, người dùng cần thiết lập các bước sau:</string>
+    <string name="go_gpt_intro_step2">Bước 2: Bật Chuyển Đổi Giọng Nói Thành Văn Bản (Speech-to-Text) và Chuyển Văn Bản Thành Giọng Nói (Text-to-Speech) của Google để tối ưu.</string>
+    <string name="go_gpt_intro_noti">NẾU KHÔNG CÓ LỰA CHỌN "GOOGLE" CẦN CÀI ĐẶT BỘ NHẬN DIỆN CỦA GOOGLE TRÊN PLAY STORE</string>
+    <string name="go_gpt_intro_step3">Bước 3: Kiểm tra hoạt động</string>
+    <string name="directions">Chỉ đường</string>
+    <string name="my_location_expand">Vị trí hiện tại của tôi</string>
+    <string name="add_waypoint">Thêm điểm dừng</string>
+    <string name="fuel">Cây xăng</string>
+    <string name="charging_station">Trạm sạc</string>
+    <string name="avoid_highways">Tránh đường cao tốc</string>
+    <string name="avoid_tolls">Tránh trạm thu phí</string>
+    <string name="max_via_point_warning">Thêm tối đa 5 điểm dừng</string>
+    <string name="responding">Đang phản hồi</string>
+    <string name="ota_update_title">Cập nhật ứng dụng</string>
+    <string name="downloand">Tải xuống</string>
+    <string name="has_new_update">Phiên bản mới</string>
+    <string name="new_update_ready">Bản cập nhật mới đã sẵn sàng</string>
+    <string name="update_new_version_message">Đã có phiên bản mới. Bạn có muốn cập nhật ngay không?</string>
+    <string name="update_new_version_force_message">Cập nhật để khám phá những tính năng mới và trải nghiệm tốt hơn</string>
+    <string name="upgrade_description">Nâng cấp để khám phá những tính năng mới và trải nghiệm tốt hơn</string>
+    <string name="later">Để sau</string>
+    <string name="update_now">Cập nhật ngay</string>
+    <string name="upgrade_now">Nâng cấp ngay</string>
+    <string name="hey_gofa_permission">Tính năng Hey GOFA cho phép gọi GOGPT bất kỳ lúc nào nên yêu cầu quyền luôn truy cập microphone và quyền hiển thị trên ứng dụng khác để có thể hoạt động hiệu quả</string>
+    <string name="next_step_go_gpt">Tiếp theo</string>
+    <string name="go_gpt_feature">Tính năng GO GPT</string>
+    <string name="go_gpt_feature_des">GO GPT là một trợ lý thông minh tương tác bằng giọng nói. Với GO GPT bạn có thể</string>
+    <string name="navigate_to_any_location">Chỉ đường đến vị trí bất kỳ</string>
+    <string name="example_navigate">“Chỉ đường đến Lăng Bác”</string>
+    <string name="navigate_using_google_maps">Chỉ đường bằng ứng dụng Google Maps</string>
+    <string name="example_navigate_google_maps">"Chỉ đường đến Lăng Bác bằng Google Maps"</string>
+    <string name="ask_speed_sign_info_ahead">Hỏi thông tin biển báo tốc độ phía trước</string>
+    <string name="example_ask_sign_info">“Phía trước có biển báo nào"</string>
+    <string name="respond_speed_sign_info">Phản hồi thông tin biển báo</string>
+    <string name="example_speed_sign_info">“Phía trước có biển báo 80km/h”</string>
+    <string name="play_song">Mở bài hát</string>
+    <string name="example_play_song">“Mở bài hát của Duy Mạnh”</string>
+    <string name="play_song_on_youtube">Mở bài hát bằng Youtube</string>
+    <string name="example_play_song_youtube">“Mở bài hát của Duy Mạnh bằng Youtube”</string>
+    <string name="play_song_on_spotify">Mở bài hát bằng Spotify</string>
+    <string name="example_play_song_spotify">“Mở bài hát của Duy Mạnh bằng Spotify”</string>
+    <string name="play_vov_traffic">Mở VOV Giao thông</string>
+    <string name="example_play_vov_traffic">“Mở VOV giao thông”</string>
+    <string name="check_traffic_fine">Kiểm tra phạt nguội</string>
+    <string name="example_check_plate_fine">“Biển số 29A12345 có bị phạt nguội không”</string>
+    <string name="ask_any_question">Hỏi đáp bất kỳ</string>
+    <string name="example_ask_question">“Bác Hồ sinh vào năm nào”</string>
+    <string name="search_information">Tìm kiếm thông tin</string>
+    <string name="example_search_information">“Giới thiệu về Cầu Long Biên”</string>
+    <string name="setup_hey_gofa_onboard_title">Thiết lập Hey GOFA</string>
+    <string name="only_on_carplay_android_auto">Chỉ có trên Carplay / Android Auto</string>
+    <string name="only_on_mobile">Chỉ có trên Mobile</string>
+    <string name="you_can">Bạn có thể</string>
+    <string name="manual_use_hey_gofa_aa_des">Ấn 2 lần nút chuyển bài để ra lệnh GO GPT</string>
+    <string name="manual_use_hey_gofa_aa"><u>Hướng dẫn cài đặt</u></string>
+    <string name="manual_command_hey_gofa">Bạn có thể sử dụng GO GPT bằng cách nói “Hey GOFA” bất kỳ lúc nào</string>
+    <string name="introducing_hey_gofa_feature">GO GPT là một tính năng trợ lý thông minh, hỗ trợ bạn chỉ đường, kiểm tra phạt nguội, mở ứng dụng và tra cứu thông tin,vv...</string>
+    <string name="terms_of_service">Điều khoản dịch vụ</string>
+    <string name="terms_of_service_des">Ứng dụng GOFA sử dụng YouTube API để tìm kiếm video công khai theo từ khóa và mở các video tương ứng trên nền tảng YouTube.\n\nChúng tôi không thu thập, lưu trữ hoặc xử lý bất kỳ dữ liệu cá nhân nào từ người dùng thông qua YouTube API.\n\nỨng dụng không yêu cầu đăng nhập Google hoặc YouTube, và không truy cập thông tin cá nhân, danh sách phát hay lịch sử xem.\n\nBằng việc tiếp tục sử dụng ứng dụng, bạn đồng ý với:</string>
+    <string name="terms_of_service_des_line1">Ứng dụng GOFA sử dụng YouTube API để tìm kiếm video công khai theo từ khóa và mở các video tương ứng trên nền tảng YouTube.</string>
+    <string name="terms_of_service_des_line2">Chúng tôi không thu thập, lưu trữ hoặc xử lý bất kỳ dữ liệu cá nhân nào từ người dùng thông qua YouTube API.</string>
+    <string name="terms_of_service_des_line3">Ứng dụng không yêu cầu đăng nhập Google hoặc YouTube, và không truy cập thông tin cá nhân, danh sách phát hay lịch sử xem.</string>
+    <string name="terms_of_service_des_line4">Bằng việc tiếp tục sử dụng ứng dụng, bạn đồng ý với:</string>
+    <string name="terms_of_service_youtube">Điều khoản dịch vụ của Youtube</string>
+    <string name="google_privacy_policy">Chính sách Quyền riêng tư của Google</string>
+    <string name="gofa_privacy_policy">Chính sách Quyền riêng tư của GOFA</string>
+    <string name="finished">Hoàn tất</string>
+    <string name="detail_heygofa_active_forever">Ứng dụng luôn lắng nghe ngay cả khi bạn phát nhạc, xem video hoặc sử dụng ứng dụng khác</string>
+    <string name="title_heygofa_active_forever">Trợ lý ảo luôn lắng nghe</string>
+    <string name="getting_location_information">Đang lấy thông tin vị trí</string>
+    <string name="invite_license_1y">Nâng cấp lên tài khoản PRO để sở hữu tất cả chức năng và cảnh báo của GOFA</string>
+    <string name="setting_title_2">Âm thanh &amp; cảnh báo</string>
+    <string name="license_free">Free</string>
+    <string name="invite_buy_purchase">Đăng ký PRO</string>
+    <string name="setting_title_1">Mã kích hoạt GOFA PRO</string>
+    <string name="setting_title_3">Thông báo</string>
+    <string name="setting_title_4">Truyền thông</string>
+    <string name="setting_title_5">Cài đặt chung</string>
+    <string name="setting_title_6">Tự động khởi động</string>
+    <string name="tiktok">Tiktok GOFA</string>
+    <string name="community">Cộng đồng GOFA</string>
+    <string name="fanpage">Fanpage GOFA</string>
+    <string name="auto_start_enable">- <b>Thiết bị khuyên dùng:</b> Tính năng này được thiết kế tối ưu cho <b>Màn hình DVD Android</b> và <b>Android Box</b>, giúp bạn rảnh tay ngay khi lên xe.\n\n- <b>Thiết bị di động:</b><b>Không khuyến khích</b> bật trên điện thoại cá nhân. Ứng dụng sẽ tự động chiếm màn hình mỗi khi bạn khởi động lại máy, có thể gây bất tiện cho trải nghiệm hàng ngày.</string>
+    <string name="introduce_auto_start">Mở ứng dụng dẫn đường ngay khi xe khởi động. Sẵn sàng cho mọi hành trình</string>
+    <string name="destination">destination</string>
+    <string name="target">payment</string>
+    <string name="gg_routing">Xem đường đi từ Google Maps</string>
+    <string name="guide_gg_pro">Tính năng mới, \nkhám phá ngay!</string>
+    <string name="guide_gg_free">Nâng cấp GOFA PRO \nđể sử dụng tính năng này</string>
 </resources>

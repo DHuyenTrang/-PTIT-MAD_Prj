@@ -1,0 +1,1 @@
+package com.n3t.mobile.data.model; class MapAnimationOptionsProvider

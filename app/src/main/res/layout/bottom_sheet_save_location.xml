@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_bottom_sheet"
+    android:orientation="vertical"
+    android:theme="@style/Theme.Gofa">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/dragHandle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginVertical="8dp"
+        android:background="@drawable/drag_handle" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_padding_horizontal"
+            android:text="@string/save_location"
+            android:textAppearance="@style/Gofa.TextXL.Bold"
+            android:textColor="@color/onSurface"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnClose"
+            style="@style/Gofa.IconButton.Outline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="4dp"
+            app:icon="@drawable/ic_close"
+            app:iconSize="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/activity_padding_horizontal">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rbHouse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:paddingLeft="8dp"
+            android:text="@string/house" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rbOffice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            android:text="@string/office" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rbFavorite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            android:text="@string/save_is_favorite" />
+    </RadioGroup>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textFieldName"
+        style="@style/Gofa.TextField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/activity_padding_horizontal"
+        android:layout_marginTop="12dp"
+        android:hint="@string/name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="@color/onSurface" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSaved"
+        style="@style/Gofa.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/activity_padding_horizontal"
+        android:layout_marginTop="@dimen/activity_padding_horizontal"
+        android:layout_marginBottom="4dp"
+        android:text="@string/save" />
+</androidx.appcompat.widget.LinearLayoutCompat>

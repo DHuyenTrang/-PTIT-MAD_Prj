@@ -1,0 +1,39 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="65dp"
+    android:height="17dp"
+    android:viewportWidth="65"
+    android:viewportHeight="16">
+
+  <!-- Vòng tròn ngoài (dịch sang trái 4 đơn vị) -->
+  <path
+      android:pathData="M0,8
+                          a4,4 0 1 1 8,0
+                          a4,4 0 1 1 -8,0Z"
+      android:fillColor="@color/onError" />
+
+  <!-- Thân connector (dịch sang trái 4 đơn vị) -->
+  <path
+      android:pathData="M4,6
+                          H65
+                          V10
+                          H4
+                          Z"
+      android:fillColor="@color/onError" />
+
+  <!-- Vòng tròn trong (dịch sang trái 4 đơn vị) -->
+  <path
+      android:pathData="M2,8
+                          a2,2 0 1 1 4,0
+                          a2,2 0 1 1 -4,0Z"
+      android:fillColor="@color/error" />
+
+  <!-- Đường line trang trí (dịch sang trái 4 đơn vị) -->
+  <path
+      android:pathData="M4,7.3
+                          H65
+                          V8.7
+                          H4
+                          Z"
+      android:fillColor="@color/error" />
+
+</vector>

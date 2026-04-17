@@ -1,85 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="inverseNormal">@color/black</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="mapTextColor">#FF000000</color>
+    <color name="scrim">@color/black</color>
+    <color name="primary">@color/primary50</color>
+    <color name="primaryContainer">@color/primary90</color>
+    <color name="onPrimary">@color/white</color>
+    <color name="onPrimaryContainer">@color/primary10</color>
+    <color name="success">@color/success40</color>
+    <color name="successContainer">@color/success90</color>
+    <color name="onSuccess">@color/white</color>
+    <color name="onSuccessContainer">@color/success10</color>
+    <color name="info">@color/info40</color>
+    <color name="infoContainer">@color/info90</color>
+    <color name="onInfo">@color/white</color>
+    <color name="onInfoContainer">@color/info10</color>
+    <color name="warning">@color/warning40</color>
+    <color name="warningContainer">@color/warning90</color>
+    <color name="onWarning">@color/white</color>
+    <color name="onWarningContainer">@color/warning10</color>
+    <color name="error">@color/error40</color>
+    <color name="errorContainer">@color/error90</color>
+    <color name="onError">@color/white</color>
+    <color name="onErrorContainer">@color/error10</color>
+    <color name="surface">@color/neutral98</color>
+    <color name="onSurface">@color/neutral10</color>
+    <color name="onSurfaceVariant">@color/neutral30</color>
+    <color name="surfaceDim">@color/neutral87</color>
+    <color name="surfaceBright">@color/neutral98</color>
+    <color name="surfaceContainerLow">@color/neutral98</color>
+    <color name="surfaceContainer">@color/neutral94</color>
+    <color name="surfaceContainerHigh">@color/neutral90</color>
+    <color name="background">@color/neutral98</color>
+    <color name="onBackground">@color/neutral10</color>
+    <color name="outline">@color/neutral50</color>
+    <color name="outlineVariant">@color/neutral80</color>
+    <color name="shadow">@color/black</color>
+    <color name="transparent">@color/trans</color>
 
-    <color name="color_brand_primary">#FF008B52</color>
-    <color name="color_brand_primary_variant">#FF006F42</color>
-    <color name="color_brand_primary_tint">#FF66B997</color>
-    <color name="color_brand_primary_container">#FFCCE8DC</color>
-    <color name="color_brand_secondary">#FFFA0575</color>
+    <color name="counter_bg">@color/primary</color>
+    <color name="counter_color">@color/onPrimary</color>
+    <color name="selector_color">@color/primary</color>
+    <color name="place_holder_color">@color/onSurfaceVariant</color>
+    <color name="ripple_color">@color/primary</color>
+    <color name="toolbar_bg">@color/primary</color>
+    <color name="done">@color/onPrimary</color>
+    <color name="change_album_color">@color/onPrimary</color>
+    <color name="camera_icon_color">@color/primary</color>
+    <color name="camera_text_color">@color/primary</color>
+    <color name="permission_alert_bg">@color/background</color>
+    <color name="permission_alert_color">@color/onBackground</color>
+    <color name="home_color">@color/error60</color>
 
-    <color name="color_background">#FFF8FAFA</color>
-    <color name="color_surface">#FFF8FAFA</color>
-    <color name="color_surface_secondary">#FFF7F7F7</color>
-    <color name="color_surface_tertiary">#FFF2F2F2</color>
-    <color name="color_surface_container">#FFECEEEF</color>
-    <color name="color_surface_container_high">#FFE1E3E3</color>
-    <color name="color_surface_variant">#FFD8DADB</color>
-    <color name="color_surface_inverse">#FF2E3132</color>
 
-    <color name="color_text_primary">#FF191C1D</color>
-    <color name="color_text_secondary">#FF444748</color>
-    <color name="color_text_tertiary">#FF343A40</color>
-    <color name="color_text_brand">#FF008B52</color>
-    <color name="color_text_inverse">#FFFFFFFF</color>
-    <color name="color_text_placeholder">#FFADB5BD</color>
-    <color name="color_text_disabled">#FF6D757D</color>
+    <color name="bg_success">#D2E7DD</color>
+    <color name="bg_tertiary">#F2F2F2</color>
+    <color name="brand_primary">@color/primary50</color>
+    <color name="secondary">#212529</color>
+    <color name="border_tertiary">#E6E6E6</color>
+    <color name="border_invert">#E6E6E6</color>
+    <color name="invert">#FFFFFF</color>
+    <color name="bg_secondary">#F7F7F7</color>
+    <color name="brand_secondary">#FA0575</color>
+    <color name="icon_focus">#1B73F9</color>
+    <color name="icon_invert">#FFFFFF</color>
+    <color name="font_colour_placeholder">#ADB5BD</color>
+    <color name="border_primary">#ADB5BD</color>
+    <color name="cell_bg_color_system">@color/white</color>
+    <color name="icon_primary">@color/black</color>
+    <color name="font_colour_tertiary">#343A40</color>
+    <color name="border_secondary">#D9D9D9</color>
+    <color name="font_colour_success">#218656</color>
+    <color name="font_colour_danger">#DA3849</color>
+    <color name="bg_danger">#F7D7DB</color>
+    <color name="bg_primary">#FFFFFF</color>
+    <color name="btn_disabled">#D9D9D9</color>
+    <color name="font_colour_primary">#000000</color>
+    <color name="bg_payment">#006F42</color>
 
-    <color name="color_icon_primary">#FF000000</color>
-    <color name="color_icon_secondary">#FF343A40</color>
-    <color name="color_icon_brand">#FF008B52</color>
-    <color name="color_icon_inverse">#FFFFFFFF</color>
-    <color name="color_icon_error">#FFDA3849</color>
-
-    <color name="color_border_primary">#FFADB5BD</color>
-    <color name="color_border_secondary">#FFE6E6E6</color>
-    <color name="color_border_inverse">#FFE6E6E6</color>
-    <color name="color_outline">#FF747878</color>
-    <color name="color_outline_variant">#FFC4C7C7</color>
-
-    <color name="color_success">#FF0D9467</color>
-    <color name="color_success_container">#FFC6F0E2</color>
-    <color name="color_on_success">#FFFFFFFF</color>
-    <color name="color_on_success_container">#FF03251A</color>
-
-    <color name="color_warning">#FFC47E09</color>
-    <color name="color_warning_accent">#FFF7B13C</color>
-    <color name="color_warning_container">#FFFDECCE</color>
-    <color name="color_on_warning">#FFFFFFFF</color>
-    <color name="color_on_warning_container">#FF312002</color>
-
-    <color name="color_error">#FFC5334C</color>
-    <color name="color_error_fill">#FFDA3849</color>
-    <color name="color_error_accent">#FFF43F5E</color>
-    <color name="color_error_container">#FFFDD9DF</color>
-    <color name="color_on_error">#FFFFFFFF</color>
-    <color name="color_on_error_container">#FF3A0D14</color>
-
-    <color name="color_info">#FF2F69C7</color>
-    <color name="color_info_accent">#FF1B73F9</color>
-    <color name="color_on_info">#FFFFFFFF</color>
-
-    <color name="color_route_selected_fill">#FF33A275</color>
-    <color name="color_route_selected_stroke">#FF006F42</color>
-    <color name="color_route_unselected_fill">#FF8E9192</color>
-    <color name="color_route_unselected_stroke">#FF5C5F5F</color>
-
-    <color name="color_category_blue">#FF1B73F9</color>
-    <color name="color_category_orange">#FFFB7E2A</color>
-    <color name="color_category_purple">#FF6F47BE</color>
-    <color name="color_category_yellow">#FFFEC02F</color>
-    <color name="color_accent_blue">#FF007AFF</color>
-
-    <color name="color_bg_brand_primary">#FF008B52</color>
-    <color name="color_bg_brand_secondary">#FFFA0575</color>
-    <color name="color_bg_secondary">#FFF7F7F7</color>
-    <color name="color_bg_tertiary">#FFF2F2F2</color>
-    <color name="color_bg_disabled">#FF6D757D</color>
-    <color name="color_bg_danger_fill">#FFDA3849</color>
-    <color name="color_bg_success_fill">#FFD2E7DD</color>
-
-    <color name="color_scrim">#FF000000</color>
-    <color name="color_shadow_15">#26000000</color>
-    <color name="color_shadow_30">#4D000000</color>
 </resources>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottom_sheet"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/bottom_sheet_padding_vertical"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+    <!-- Indicator -->
+    <!-- Content Container -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:fillViewport="true"
+        android:clipToPadding="true"
+        android:layout_weight="1"
+        android:id="@+id/viewScroll">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <View
+                android:id="@+id/indicator"
+                android:layout_width="32dp"
+                android:layout_height="4dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/drag_container" />
+            <TextView
+                android:id="@+id/txtNameStation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/onSurface"
+                tools:text="Cửa hàng xăng dầu số 8"/>
+
+            <LinearLayout
+                android:id="@+id/layout_open_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    android:id="@+id/txtStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primary"
+                    android:text="Đang mở cửa"/>
+
+                <TextView
+                    android:id="@+id/txtCloseTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:textColor="@color/onSurfaceVariant"
+                    android:text="Đóng cửa lúc 23:00"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_open_sunday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primary"
+                    android:text="Mở cửa Chủ nhật"/>
+
+                <TextView
+                    android:id="@+id/txtSunday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:textColor="@color/onSurfaceVariant"
+                    android:text="Có"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layoutCapacity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primary"
+                    android:text="Công suất"/>
+
+                <TextView
+                    android:id="@+id/txtCapacity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:textColor="@color/onSurfaceVariant"
+                    android:text="Siêu nhanh 80KW"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/layoutAddressStation"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_map_pin_line_outline"
+                    app:tint="@color/onSurfaceVariant" />
+
+                <TextView
+                    android:id="@+id/txtAddressStation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:textColor="@color/onSurfaceVariant"
+                    android:text="Skyline Van Quan, Skyline Van Quan, Skyline Van Quan, Skyline Van Quan,Skyline Van Quan"/>
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnViewRouteStationInLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Xem đường đi"
+                android:textColor="@color/onPrimary"
+                android:backgroundTint="@color/primary"/>
+
+            <View
+                android:id="@+id/separator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:alpha="0"
+                android:background="@color/outlineVariant" />
+
+            <!-- Container information -->
+            <LinearLayout
+                android:id="@+id/containerOtherInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alpha="0"
+                android:orientation="vertical"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <!-- Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnViewRouteStation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Xem đường đi"
+        android:visibility="gone"
+        android:textColor="@color/onPrimary"
+        android:backgroundTint="@color/primary"/>
+</LinearLayout>

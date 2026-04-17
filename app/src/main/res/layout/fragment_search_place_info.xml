@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ctrContainer"
+    xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.search.SearchPlaceInfoFragment">
+
+    <com.mapbox.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomSheet"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.n3t.mobile.core.widgets.SafeAreaView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBack"
+                style="@style/Gofa.IconButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="@dimen/activity_padding_horizontal"
+                app:icon="@drawable/ic_back"
+                app:iconTint="@color/onSurface"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnClose"
+                style="@style/Gofa.IconButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="@dimen/activity_padding_horizontal"
+                app:icon="@drawable/gofa_ic_clear"
+                app:iconTint="@color/onSurface"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.n3t.mobile.core.widgets.SafeAreaView>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/bottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_sheet"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/activity_padding_horizontal"
+        android:paddingBottom="@dimen/bottom_sheet_padding_vertical"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:visibility="gone"
+            android:background="@drawable/drag_container" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Location"
+                android:textAppearance="@style/Gofa.TextXL.Bold"
+                android:textColor="@color/onSurface" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnFavorite"
+                style="@style/Gofa.IconButton.Outline"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:icon="@drawable/ic_star"
+                app:iconTint="@color/primary" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_place"
+                app:tint="@color/onSurfaceVariant" />
+
+            <TextView
+                android:id="@+id/txtAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:text="Address"
+                android:textAppearance="@style/Gofa.TextBase"
+                android:textColor="@color/onSurfaceVariant" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_distance"
+                app:tint="@color/onSurfaceVariant" />
+
+            <TextView
+                android:id="@+id/txtDistance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:text="5.1 km"
+                android:textAppearance="@style/Gofa.TextBase"
+                android:textColor="@color/onSurfaceVariant" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnViewRoute"
+            style="@style/Gofa.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/view_route" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    
+</androidx.constraintlayout.widget.ConstraintLayout>

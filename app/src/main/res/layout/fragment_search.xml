@@ -1,37 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:background="@color/background"
+    android:fillViewport="true"
+    tools:context=".ui.search.SearchFragment">
 
-    <com.google.android.material.textfield.TextInputLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etSearch"
+        android:layout_height="match_parent">
+
+        <com.n3t.mobile.core.widgets.SafeAreaView
+            android:id="@+id/sa"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/search_place"
-            android:inputType="text"
-            android:maxLines="1" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="match_parent">
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:visibility="gone"
-        android:layout_marginTop="16dp" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/searchBar"
+                style="@style/Gofa.SearchBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/activity_padding_horizontal"
+                android:layout_marginTop="@dimen/activity_padding_horizontal"
+                android:layout_marginBottom="@dimen/activity_padding_vertical"
+                android:background="@drawable/bg_search_bar"
+                app:endIconMode="custom"
+                app:hintEnabled="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:startIconDrawable="@drawable/ic_back">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvSearchResults"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="8dp" />
+                <EditText
+                    android:id="@+id/etSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:autofillHints="name"
+                    android:background="@null"
+                    android:hint="@string/search_address"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:maxLength="@integer/search_max_length"
+                    android:padding="0dp"
+                    android:textColorHint="@color/onSurfaceVariant"
+                    android:textAppearance="@style/Gofa.TextBase"
+                    android:textColor="@color/onSurface" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-</LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSearchResult"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/searchBar"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_search_place_result" />
+            <LinearLayout
+                android:id="@+id/llNoInternet"
+                android:visibility="gone"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginVertical="200dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="64dp"
+                    android:layout_gravity="center"
+                    android:layout_height="64dp"
+                    android:src="@drawable/gofa_ic_clear"
+                    android:background="@drawable/bg_circle_icon_no_internet"
+                    android:padding="16dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Không có kết nối Internet"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:textAppearance="@style/Gofa.TextXL.Bold"
+                    android:layout_marginTop="32dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kiểm tra kết nối internet của bạn"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:layout_marginTop="12dp"/>
+                <Button
+                    android:id="@+id/btnTryAgain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Gofa.TextButton.Primary"
+                    android:text="Thử lại"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"/>
+            </LinearLayout>
+            <ProgressBar
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/pgLoading"/>
+
+            <TextView
+                android:id="@+id/tvEmptyState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/no_result"
+                android:textAppearance="@style/Gofa.TextBase"
+                android:textColor="@color/onSurfaceVariant"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/searchBar" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/groupSearchRecent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/searchBar">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvCategories"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_padding_horizontal"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/activity_padding_vertical"
+                    android:visibility="gone"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:itemCount="4"
+                    tools:listitem="@layout/item_address_category"
+                    tools:visibility="visible" />
+
+
+                <com.n3t.mobile.ui.search.widgets.PlaceTypeSession
+                    android:id="@+id/sessionPlaceType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rvCategories" />
+
+                <TextView
+                    android:id="@+id/tvRecent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/activity_padding_horizontal"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="@string/recent"
+                    android:textAppearance="@style/Gofa.TextBase.Bold.LineHeight"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sessionPlaceType" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvRecentPlace"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvRecent"
+                    app:layout_constraintVertical_bias="0"
+                    tools:itemCount="4"
+                    tools:listitem="@layout/item_search_place_recent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.n3t.mobile.core.widgets.SafeAreaView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

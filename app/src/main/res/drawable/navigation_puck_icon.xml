@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Background circle -->
+    <item
+        android:id="@+id/background_circle"
+        android:drawable="@drawable/ic_navigation_puck_background"
+        android:gravity="center" />
+
+    <!-- Foreground arrow -->
+    <item
+        android:id="@+id/foreground_arrow"
+        android:drawable="@drawable/car"
+        android:gravity="center" />
+
+</layer-list>

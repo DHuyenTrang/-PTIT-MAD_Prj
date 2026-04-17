@@ -3,16 +3,13 @@ package com.n3t.mobile.data.model.api_util
 import android.content.Context
 import com.n3t.mobile.R
 
-@OptIn(ExperimentalStdlibApi::class)
 sealed class Either<out F, out S> {
-    @ConsistentCopyVisibility
     data class Failure<out F> internal constructor(val value: F) : Either<F, Nothing>() {
         companion object {
             operator fun <F> invoke(f: F): Either<F, Nothing> = Failure(f)
         }
     }
 
-    @ConsistentCopyVisibility
     data class Success<out S> internal constructor(val value: S) : Either<Nothing, S>() {
         companion object {
             operator fun <S> invoke(s: S): Either<Nothing, S> = Success(s)
@@ -24,6 +21,7 @@ sealed class Either<out F, out S> {
         fun <F> failure(value: F): Either<F, Nothing> = Failure(value)
     }
 }
+
 
 fun <F, S> Either<F, S>.isLeft() = this is Either.Failure
 fun <F, S> Either<F, S>.isRight() = this is Either.Success
@@ -41,7 +39,7 @@ fun <F, S> Either<F, S>.whenLeftRight(
 fun <F, S> Either<F, S>.whenLeft(
     left: (F) -> Unit
 ) {
-    if (isLeft()) {
+    if(isLeft()) {
         left((this as Either.Failure).value)
     }
 }
@@ -49,17 +47,18 @@ fun <F, S> Either<F, S>.whenLeft(
 fun <F, S> Either<F, S>.whenRight(
     right: (S) -> Unit
 ) {
-    if (isRight()) {
+    if(isRight()) {
         right((this as Either.Success).value)
     }
 }
 
-fun com.n3t.mobile.data.model.api_util.Failure.getErrorMessage(context: Context): String? {
+fun Failure.getErrorMessage(context: Context): String? {
     return when (this.errorType) {
         ErrorType.LOST_INTERNET -> context.getString(R.string.error_lost_internet)
         ErrorType.SERVER_RESPONSE_ERROR -> null
         ErrorType.SERVER_ERROR -> context.getString(R.string.error_server_message)
         ErrorType.REQUEST_TIMEOUT -> context.getString(R.string.error_request_timeout)
-        else -> context.getString(R.string.error_something_wrong)
+        else -> context.getString(R.string.error_some_thing_wrong)
     }
 }
+

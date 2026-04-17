@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/move_history_navigation.xml"
+    app:startDestination="@id/moveHistoryFragment">
+
+    <fragment
+        android:id="@+id/moveHistoryFragment"
+        android:name="com.gofa.mobile.ui.move_history.MovingHistoryFragment"
+        android:label="move_history_fragment"
+        tools:layout="@layout/fragment_moving_history">
+        <action
+            android:id="@+id/action_moveHistoryFragment_to_moveHistoryDetailFragment"
+            app:destination="@id/moveHistoryDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/moveHistoryDetailFragment"
+        android:name="com.gofa.mobile.ui.move_history.MoveHistoryDetailFragment"
+        android:label="fragment_move_history_detail"
+        tools:layout="@layout/fragment_move_history_detail" />
+
+</navigation>
