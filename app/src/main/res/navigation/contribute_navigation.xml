@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contribute_navigation"
+    app:startDestination="@id/contributeMenuFragment">
+    <fragment
+        android:id="@+id/contributeMenuFragment"
+        android:name="com.gofa.mobile.ui.contribute.ContributeMenuFragment"
+        android:label="fragment_contribute_menu"
+        tools:layout="@layout/fragment_contribute_menu">
+        <action
+            android:id="@+id/action_contributeMenuFragment_to_contributeDetailFragment"
+            app:destination="@id/contributeDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contributeDetailFragment"
+        android:name="com.gofa.mobile.ui.contribute.ContributeDetailFragment"
+        android:label="fragment_contribute_detail"
+        tools:layout="@layout/fragment_contribute_detail" />
+</navigation>

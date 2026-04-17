@@ -8,120 +8,69 @@
     android:layout_height="match_parent"
     tools:context=".ui.map.MapFragment">
 
-    <com.n3t.mobile.utils.MapUltis.GofaMapView
+    <com.mapbox.maps.MapView
         android:id="@+id/mapView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:cameraTargetLat="20.9764997"
-        app:cameraTargetLng="105.789308"
-        app:cameraZoom="8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:mapProviderType="mapbox" />
-
-
-
-    <!--    <com.n3t.mobile.core.widgets.CircleIconButton-->
-    <!--        android:id="@+id/btnVolume"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_margin="@dimen/activity_padding_horizontal"-->
-    <!--        app:icon="@drawable/ic_volume"-->
-    <!--        app:isActive="false"-->
-    <!--        app:layout_constraintBottom_toTopOf="@+id/btnRadioVoV"-->
-    <!--        app:layout_constraintRight_toRightOf="parent" />-->
-
-    <com.n3t.mobile.core.widgets.CircleIconButton
-        android:id="@+id/btnMyLocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/activity_padding_horizontal"
-        app:icon="@drawable/ic_location"
-        app:isActive="false"
-        app:layout_constraintBottom_toBottomOf="@+id/btnFeedback"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <com.n3t.mobile.core.widgets.CircleIconButton
-        android:id="@+id/btnRadioVoV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/activity_padding_horizontal"
-        app:icon="@drawable/ic_radio"
-        app:isActive="false"
-        app:layout_constraintBottom_toTopOf="@+id/btnFeedback"
-        app:layout_constraintRight_toRightOf="parent" />
-
-    <com.n3t.mobile.core.widgets.CircleIconButton
-        android:id="@+id/btnFeedback"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="@dimen/activity_padding_horizontal"
-        android:layout_marginBottom="@dimen/bottom_sheet_margin"
-        app:icon="@drawable/ic_feedback"
-        app:isActive="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
-
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentFeedback"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="@dimen/card_margin"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/btnRadioVoV"
-        app:layout_constraintRight_toLeftOf="@+id/btnRadioVoV"
-        tools:background="@color/surfaceContainer"
-        tools:layout_height="@dimen/height_fragment_container_view_160dp"
-        tools:layout_width="@dimen/width_fragment_container_view_120dp"
-        tools:visibility="visible" />
-
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/layout_bottom_sheet"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_height="@dimen/peek_height_bottom_sheet_dashboard">
-
-        <include
-            android:id="@+id/bottom_sheet_dashboard"
-            layout="@layout/bottom_sheet_dashboard"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent" />
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-
-
-    <ImageButton
-        android:id="@+id/btnVolume"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="@dimen/activity_padding_horizontal"
-        android:background="@drawable/bg_btn_volume"
-        android:padding="12dp"
-        android:src="@drawable/ic_volume"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnMapType" />
-
-    <ImageButton
-        android:id="@+id/btnMapType"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="@dimen/activity_padding_horizontal"
-        android:background="@drawable/bg_btn_layer"
-
-        android:padding="12dp"
-        android:src="@drawable/ic_layer"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.n3t.mobile.core.widgets.SafeAreaView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.n3t.mobile.core.widgets.CircleIconButton
+            android:id="@+id/btnMyLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_padding_horizontal"
+            app:icon="@drawable/ic_location"
+            app:isActive="false"
+            android:layout_marginBottom="@dimen/bottom_sheet_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/layout_bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:layout_height="@dimen/peek_height_bottom_sheet_dashboard">
+
+            <include
+                android:id="@+id/bottom_sheet_dashboard"
+                layout="@layout/bottom_sheet_dashboard"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <ImageButton
+            android:id="@+id/btnVolume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="@dimen/activity_padding_horizontal"
+            android:background="@drawable/bg_btn_volume"
+            android:padding="12dp"
+            android:src="@drawable/ic_volume"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnMapType" />
+
+        <ImageButton
+            android:id="@+id/btnMapType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/activity_padding_horizontal"
+            android:background="@drawable/bg_btn_layer"
+
+            android:padding="12dp"
+            android:src="@drawable/ic_layer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.n3t.mobile.core.widgets.SafeAreaView>
 </androidx.constraintlayout.widget.ConstraintLayout>

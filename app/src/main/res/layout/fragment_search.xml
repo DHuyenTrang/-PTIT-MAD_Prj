@@ -116,6 +116,19 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:id="@+id/pgLoading"/>
 
+            <TextView
+                android:id="@+id/tvEmptyState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/no_result"
+                android:textAppearance="@style/Gofa.TextBase"
+                android:textColor="@color/onSurfaceVariant"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/searchBar" />
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/groupSearchRecent"
                 android:layout_width="match_parent"

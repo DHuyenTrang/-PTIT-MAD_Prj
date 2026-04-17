@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- The Splash Screen will be handled by the Splash API, so this layout is technically unused, 
+         but we keep it empty or with a fallback background to complete the Activity structure. -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

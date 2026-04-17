@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView
+        android:id="@+id/imageOnboarding"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/img_logo"
+        android:scaleType="centerCrop"
+        android:src="@drawable/onboarding1"/>
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="117.26dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/activity_padding_horizontal"
+        android:src="@drawable/ic_logo_primary"
+        app:layout_constraintStart_toStartOf="parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@id/tv_title"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Người bạn đồng hành "
+        android:layout_marginHorizontal="@dimen/activity_padding_horizontal"
+        android:textAppearance="@style/Gofa.Text3XL.Bold"
+        android:id="@+id/tv_title"
+        android:textColor="@color/onSurface"
+        app:layout_constraintBottom_toTopOf="@id/tv_description"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ứng dụng bản đồ và cảnh báo giao thông, tình trạng giao thông theo thời gian thực."
+        android:textAppearance="@style/Gofa.TextBase"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/onSurfaceVariant"
+        android:layout_marginHorizontal="@dimen/activity_padding_horizontal"
+        android:id="@+id/tv_description"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

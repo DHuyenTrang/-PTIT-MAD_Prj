@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:id="@+id/llNoViolationRecords"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginVertical="200dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="64dp"
+            android:layout_gravity="center"
+            android:layout_height="64dp"
+            android:src="@drawable/gofa_ic_clear"
+            android:background="@drawable/bg_circle_icon_no_internet"
+            android:padding="16dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Không có kết nối Internet"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textAppearance="@style/Gofa.TextXL.Bold"
+            android:layout_marginTop="32dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kiểm tra kết nối internet của bạn"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:layout_marginTop="12dp"/>
+        <Button
+            android:id="@+id/btnTryAgain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Gofa.TextButton.Primary"
+            android:text="Thử lại"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"/>
+    </LinearLayout>
+</LinearLayout>

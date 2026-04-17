@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contribute_navigation"
+    app:startDestination="@id/savedLocationFragment">
+    <fragment
+        android:id="@+id/savedLocationFragment"
+        android:name="com.gofa.mobile.ui.save_place.SavedLocationFragment"
+        android:label="SavedLocationFragment" >
+        <action
+            android:id="@+id/action_savedLocationFragment_to_searchToSavedLocationFragment"
+            app:destination="@id/searchToSavedLocationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchToSavedLocationFragment"
+        android:name="com.gofa.mobile.ui.save_place.SearchToSavedLocationFragment"
+        android:label="SearchToSavedLocationFragment" />
+</navigation>

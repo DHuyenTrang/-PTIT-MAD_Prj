@@ -1,8 +1,11 @@
 import java.util.Properties
 
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.androidx.navigation.safeargs.kotlin)
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
+    id("androidx.navigation.safeargs.kotlin")
+    id("com.google.gms.google-services")
 }
 
 val localProperties = Properties().apply {
@@ -27,7 +30,11 @@ android {
 
         // Inject Mapbox token from local.properties into BuildConfig
         val mapboxToken = localProperties.getProperty("MAPBOX_ACCESS_TOKEN", "")
+        val googleMapsApiKey = localProperties.getProperty("GOOGLE_MAPS_API_KEY", "")
+        val goongApiKey = localProperties.getProperty("GOONG_API_KEY", "")
         buildConfigField("String", "MAPBOX_ACCESS_TOKEN", "\"$mapboxToken\"")
+        buildConfigField("String", "GOOGLE_MAPS_API_KEY", "\"$googleMapsApiKey\"")
+        buildConfigField("String", "GOONG_API_KEY", "\"$goongApiKey\"")
     }
 
     buildTypes {
@@ -42,6 +49,9 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = "11"
     }
     buildFeatures {
         viewBinding = true
@@ -59,6 +69,7 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.preference.ktx)
+    implementation("androidx.window:window:1.3.0")
     implementation(platform(libs.koin.bom))
     implementation(libs.koin.android)
     implementation(libs.koin.androidx.navigation)
@@ -71,6 +82,7 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.coroutines.play.services)
     implementation(libs.google.play.services.location)
+    implementation(project(":lib-android-navigation"))
     val mapBoxVersion = "11.3.0"
     implementation("com.mapbox.maps:android:$mapBoxVersion") {
         exclude(group = "com.mapbox.mapboxsdk", module = "mapbox-sdk-directions-models")

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog_calculate_route"
+    android:orientation="vertical"
+    android:paddingTop="8dp"
+    android:paddingHorizontal="@dimen/activity_padding_horizontal"
+    android:paddingBottom="@dimen/activity_padding_horizontal"
+
+    >
+
+    <!-- Tiêu đề -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="12dp"
+        android:text="@string/new_update_ready"
+        android:textAppearance="@style/Gofa.Text2XL"
+        android:textStyle="bold" />
+
+    <!-- Nội dung -->
+    <TextView
+        android:id="@+id/tvMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="20dp"
+        android:text="@string/upgrade_description"
+        android:textAppearance="@style/Gofa.TextSm.LineHeight"
+        android:textColor="@color/onSurfaceVariant" />
+
+    <!-- Nút bấm -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <!-- Nút để sau -->
+
+        <!-- Nút cập nhật ngay -->
+        <Button
+            android:id="@+id/btnUpdateNow"
+            style="@style/Gofa.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/primary"
+            android:padding="10dp"
+            android:text="@string/upgrade_now"
+            android:textColor="@color/cell_bg_color_system"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

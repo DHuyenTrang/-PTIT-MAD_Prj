@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutPackage"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_license_package"
+    android:layout_marginBottom="12dp">
+
+    <ImageView
+        android:id="@+id/ivCheckmark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/ic_radio_uncheck"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="12dp"
+        />
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/tvName"
+        android:layout_width="0dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:layout_height="wrap_content"
+        android:text="PRO - 1 Năm"
+        android:textAppearance="@style/Gofa.TextLg.Bold"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@id/ivCheckmark"
+        android:layout_marginStart="12dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <TextView
+        android:id="@+id/tvBestChoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ưu đãi tốt nhất"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingHorizontal="20dp"
+        android:gravity="center"
+        android:paddingBottom="8dp"
+        android:textColor="#0C1D38"
+        android:background="@drawable/bg_best_choice"
+        android:textAppearance="@style/Gofa.TextXxs"
+        />
+
+    <TextView
+        android:id="@+id/tvDiscount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/bg_discount"
+        android:gravity="center"
+        android:paddingStart="10dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="2dp"
+        android:text="-20 %"
+        android:textAppearance="@style/Gofa.TextXs.Bold"
+        android:textColor="@color/onError"
+        android:visibility="gone"
+        app:drawableTint="@color/onSurface"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDisplayPrice"
+        android:layout_marginBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="199k/1 năm"
+        android:textColor="@color/white"
+        android:textAppearance="@style/Gofa.TextBase"
+        app:layout_constraintStart_toStartOf="@id/tvName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvName"/>
+
+    <TextView
+        android:id="@+id/tvSubPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="350k/1 năm"
+        android:textAppearance="@style/Gofa.TextBase"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@id/tvDisplayPrice"
+        android:layout_marginStart="12dp"
+        app:layout_constraintTop_toTopOf="@id/tvDisplayPrice"/>
+
+    <View
+        android:id="@+id/overlayView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#99000000"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

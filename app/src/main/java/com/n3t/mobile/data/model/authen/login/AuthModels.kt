@@ -3,7 +3,7 @@ package com.n3t.mobile.data.model.authen.login
 import com.google.gson.annotations.SerializedName
 
 data class LoginWithPasswordRequest(
-    @SerializedName("phone") val phone: String,
+    @SerializedName("email") val email: String,
     @SerializedName("password") val password: String,
 )
 
@@ -19,11 +19,11 @@ data class LoginData(
     @SerializedName("expire_time") val expireTime: Long? = null,
     @SerializedName("customer_id") val customerId: Int? = null,
     @SerializedName("display_name") val displayName: String? = null,
-    @SerializedName("phone") val phone: String? = null,
+    @SerializedName("email") val email: String? = null,
 )
 
 data class GetAccountStatus(
-    @SerializedName("phone") val phone: String,
+    @SerializedName("email") val email: String,
 )
 
 data class GetAccountStatusResponse(
@@ -38,7 +38,7 @@ data class AccountStatusData(
 )
 
 data class PasswordForgotRequest(
-    @SerializedName("phone") val phone: String,
+    @SerializedName("email") val email: String,
 )
 
 data class PasswordForgotResponse(
@@ -50,7 +50,7 @@ data class PasswordUpdateRequest(
     @SerializedName("old_password") val oldPassword: String? = null,
     @SerializedName("new_password") val newPassword: String,
     @SerializedName("otp_code") val otpCode: String? = null,
-    @SerializedName("phone") val phone: String? = null,
+    @SerializedName("email") val email: String? = null,
 )
 
 data class PasswordUpdateResponse(
@@ -59,7 +59,7 @@ data class PasswordUpdateResponse(
 )
 
 data class ReSendOtpRequest(
-    @SerializedName("phone") val phone: String,
+    @SerializedName("email") val email: String,
 )
 
 data class ReSendOtpResponse(
@@ -67,6 +67,4 @@ data class ReSendOtpResponse(
     @SerializedName("message") val message: String? = null,
 )
 
-data class LoginRequest(
-    @SerializedName("phone") val phone: String,
-)
+

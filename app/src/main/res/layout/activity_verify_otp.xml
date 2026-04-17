@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.verify_otp.VerifyOtpActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintWidth_max="@dimen/authen_layout_max_width">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/activity_padding_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/buttonBack"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_back"
+                app:tint="@color/onSurface" />
+
+            <TextView
+                android:id="@+id/textViewTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/verify_otp"
+                android:textAppearance="@style/Gofa.Text2XL"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewInstruction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/verify_account_instruction"
+                android:textAppearance="@style/Gofa.TextBase"
+                android:textColor="@color/onSurfaceVariant"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/Gofa.TextBase"
+                android:textColor="@color/primary"
+                android:textStyle="bold"
+                tools:text="0123456789" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center">
+
+                <com.n3t.mobile.core.widgets.pin_view.PinView
+                    android:id="@+id/otpPinView"
+                    style="@style/Gofa.PinView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:cursorVisible="true"
+                    android:defaultFocusHighlightEnabled="true"
+                    android:focusable="true"
+                    android:focusedByDefault="true"
+                    android:importantForAutofill="auto"
+                    android:inputType="number"
+                    android:textColor="@color/onSurface"
+                    app:cursorColor="@color/primary"
+                    app:cursorWidth="1dp"
+                    app:itemCount="6"
+                    app:itemHeight="60dp"
+                    app:itemRadius="@dimen/card_border_radius"
+                    app:itemSpacing="8dp"
+                    app:itemWidth="44dp"
+                    app:lineWidth="2dp"
+                    app:viewType="rectangle" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textViewErrorOtp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/wrong_otp"
+                android:textAppearance="@style/Gofa.TextBase"
+                android:textColor="@color/error"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewTitleOtp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/resend_otp_after"
+                    android:textAppearance="@style/Gofa.TextBase"
+                    android:textColor="@color/onSurfaceVariant"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewCountdown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/Gofa.TextBase"
+                    android:textColor="@color/onSurface"
+                    android:textStyle="bold"
+                    android:visibility="visible"
+                    tools:text="00:55" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/btnResendOtp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/resend_sms"
+                android:textAppearance="@style/Gofa.TextBase"
+                android:textColor="@color/primary"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:visibility="visible" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

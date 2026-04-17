@@ -1,0 +1,22 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="padding_end_icon_button">20dp</dimen>
+    <dimen name="margin_coordinator_layout">20dp</dimen>
+    <dimen name="divider_margin_start">52dp</dimen>
+    <dimen name="divider_margin_end">4dp</dimen>
+    <dimen name="gofa_circle_width">100dp</dimen>
+    <dimen name="inside_circle_width">24dp</dimen>
+    <dimen name="bottom_sheet_peek_height">76dp</dimen>
+    <dimen name="recycler_view_item_spacing">8dp</dimen>
+    <dimen name="peek_height_bottom_sheet_dashboard">160dp</dimen>
+    <dimen name="margin_bottom_sheet_dashboard">176dp</dimen>
+    <dimen name="voice_assistant_overlay_height">212dp</dimen>
+    <dimen name="dimension_icon_go_gpt_cell">24dp</dimen>
+
+    <dimen name="speed_limit_icon_size">72dp</dimen>
+    <dimen name="speed_current_layout_size">46dp</dimen>
+    <dimen name="speed_current_img_size">48dp</dimen>
+    <dimen name="speed_current_margin_start">46dp</dimen>
+    <dimen name="speed_current_margin_top">46dp</dimen>
+    <dimen name="speed_text_size">28sp</dimen>
+</resources>

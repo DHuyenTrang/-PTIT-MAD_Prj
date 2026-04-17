@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/search_navigation"
+    app:startDestination="@id/searchFragment">
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.n3t.mobile.ui.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_searchPlaceInfoFragment"
+            app:destination="@id/searchPlaceInfoFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchPlaceInfoFragment"
+        android:name="com.n3t.mobile.ui.search.SearchPlaceInfoFragment"
+        android:label="fragment_search_place_info"
+        tools:layout="@layout/fragment_search_place_info">
+        <argument
+            android:name="placeId"
+            app:argType="string" />
+        <argument
+            android:name="sessionToken"
+            app:argType="string" />
+        <argument
+            android:name="fallbackTitle"
+            app:argType="string" />
+        <argument
+            android:name="fallbackSubtitle"
+            app:argType="string" />
+        <argument
+            android:name="distanceMeters"
+            app:argType="integer" />
+    </fragment>
+</navigation>
